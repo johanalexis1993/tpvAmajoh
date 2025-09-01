@@ -1,0 +1,27 @@
+.hidden,
+section,
+#menu-toggle,
+.tpv-tooltip {
+  display: none;
+}
+#menu-btn {
+  cursor: pointer;
+  white-space: nowrap;
+}
+aside {
+  background-color: var(--background-sidebar);
+  overflow-y: auto;
+  transition: 0.3s;
+  box-shadow: var(--013rem) 0 var(--062rem) var(--link-hover-color);
+  display: flex;
+  flex-direction: column;
+}
+aside a {
+  align-items: center;
+  padding: var(--093rem) var(--1-25rem);
+  color: var(--text-white);
+  transition: 0.3s;
+}
+aside a:hover {
+  background-color: var(--link-hover-color);
+}

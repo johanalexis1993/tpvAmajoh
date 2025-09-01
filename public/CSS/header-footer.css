@@ -1,0 +1,22 @@
+header,
+footer {
+  background-color: var(--header-footer-color);
+  color: var(--text-white);
+  padding: 0 var(--1-25rem);
+}
+header {
+  height: 15vh;
+  justify-content: space-between;
+}
+footer {
+  height: 10vh;
+  width: 100%;
+}
+footer ul,
+footer,
+img {
+  justify-content: center;
+}
+footer li {
+  margin: var(--062rem);
+}

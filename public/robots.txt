@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /TPV.html
+Allow: /
+Sitemap: http://localhost:4173/sitemap.xml

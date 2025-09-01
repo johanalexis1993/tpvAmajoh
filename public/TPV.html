@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AMAJOH TPV</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Una solución económica, completa y diseñada especialmente para emprendedores y pequeñas empresas de cualquier sector.">
+  <meta name="keywords" content="TPV gratis,mejorar negocio,amajoh,economico,AMAJOH TPV,TPV para empresas pequeñas">
+  <meta name="author" content="Johan Alexis">
+  <meta name="robots" content="noindex, follow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+           script-src 'self';
+           style-src 'self' 'unsafe-inline';
+           img-src 'self' https://res.cloudinary.com;
+           connect-src 'self' http://localhost:3000;
+           font-src 'self';
+           object-src 'none';
+           base-uri 'self';">
+  <link rel="preconnect" href="https://res.cloudinary.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Panel de Control - AMAJOH TPV">
+  <meta property="og:description"
+    content="Panel interno para gestionar productos, ventas y estadísticas. Solo usuarios registrados.">
+  <meta property="og:image"
+    content="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_auto,q_auto:eco/v1714231224/menu/amajoh_yeqekh.webp">
+  <meta property="og:url" content="https://tpv-amajoh.netlify.app">
+  <link rel="icon"
+    href="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_auto,q_auto:eco/v1714231224/menu/amajoh_yeqekh.webp"
+    type="image/webp">
+  <link rel="preconnect" href="https://www.facebook.com">
+  <link rel="preconnect" href="https://www.instagram.com">
+  <link rel="stylesheet" href="/CSS/var.css">
+  <link rel="stylesheet" href="/CSS/general.css">
+  <link rel="stylesheet" href="/CSS/scrollbar.css">
+  <link rel="stylesheet" href="/CSS/layout.css">
+  <link rel="stylesheet" href="/CSS/header-footer.css">
+  <link rel="stylesheet" href="/CSS/headings.css">
+  <link rel="stylesheet" href="/CSS/forms.css">
+  <link rel="stylesheet" href="/CSS/tables.css">
+  <link rel="stylesheet" href="/CSS/buttons.css">
+  <link rel="stylesheet" href="/CSS/sidebar.css">
+  <link rel="stylesheet" href="/CSS/images.css">
+</head>
+
+<body>
+  <header>
+    <label for="menu-toggle" id="menu-btn" aria-label="Abrir menú">☰ Menú</label>
+    <input type="checkbox" id="menu-toggle" aria-controls="menu-lateral">
+    <h1>Amajoh TPV</h1>
+  </header>
+  <main>
+    <aside id="menu-lateral" class="hidden" aria-label="Menú lateral">
+      <a href="#inventario" id="enlace-inventario" aria-current="page">Inventario</a>
+      <a href="#agregarPlato" id="enlace-agregarPlato" aria-current="page">Agregar Plato</a>
+      <a href="#caja" id="enlace-caja" aria-current="page">Caja</a>
+      <a href="#reservation" id="enlace-reservation" aria-current="page">Reservas</a>
+      <a href="#list" id="enlace-list" aria-current="page">Lista de Tareas</a>
+      <a href="#unavailablePlates" id="enlace-unavailablePlates" aria-current="page">Platos no disponibles</a>
+      <a href="#Losses" id="enlace-Losses" aria-current="page">Mermas</a>
+      <a href="#clientes" id="enlace-clientes" aria-current="page">Clientes</a>
+      <a href="#orderPaid" id="enlace-order" aria-current="page">Pedidos Cobrados</a>
+      <a href="#gestionPersonal" id="enlace-gestionPersonal" aria-current="page">Gestión del Personal</a>
+      <a href="#estadisticasVentas" id="enlace-estadisticasVentas" aria-current="page">Estadísticas de Ventas</a>
+      <a href="#reportesFinancieros" id="enlace-reportesFinancieros" aria-current="page">Reportes Financieros</a>
+      <a href="#ayuda" id="enlace-ayuda" aria-current="page">Ayuda</a>
+    </aside>
+    <!--cambiar este article mejor semantca y accesivilidad <div role="main">-->
+    <article>
+      <h2 class="visually-hidden">seciones TPV</h2>
+      <section id="inventario">
+        <h2 class="visually-hidden">inventario</h2>
+        <form data-submit="productSubmit" name="inventario" method="post" accept-charset="UTF-8" autocomplete="off">
+          <fieldset id="ingredientsProducts">
+            <legend><strong>Ingresar datos de inventarios</strong></legend>
+            <label for="producto">
+              <input type="text" id="producto" name="producto" value required>
+              <span>Producto:</span>
+            </label>
+            <label for="cantidad">
+              <input type="number" id="cantidad" name="cantidad" required>
+              <span>Cantidad:</span>
+            </label>
+            <label for="precio">
+              <input type="number" id="precio" name="precio" step="0.01" required>
+              <span>Precio:</span>
+            </label>
+            <label for="maxAmount">
+              <input type="number" id="maxAmount" name="maxAmount" required>
+              <span>Cantidad minima:</span>
+            </label>
+            <label for="categoria">
+              <select id="categoria" name="categoria" title="seleccione categoria" required>
+                <option value="" disabled selected></option>
+                <option value="freshProducts">Productos frescos</option>
+                <option value="dryProducts">Productos secos</option>
+                <option value="preparedFood">Elaborados</option>
+                <option value="alcoholicBeverages">Bebidas alcoholicas</option>
+                <option value="cleaningProducts">Productos de limpieza</option>
+              </select>
+              <span>elija categoria:</span>
+            </label>
+            <label for="proveedor">
+              <input type="text" id="proveedor" name="proveedor" value required>
+              <span>Proveedor:</span>
+            </label>
+            <button type="button" aria-label="Añadir Ingredientes">Añadir Ingredientes</button>
+            <button type="submit">Agregar Producto</button>
+          </fieldset>
+        </form>
+        <search>
+          <label for="product">Producto:</label>
+          <input type="search" id="product" name="product" placeholder="Buscar producto...">
+        </search>
+        <table id="tablaInventario" aria-label="Tabla de inventario de productos">
+          <caption>
+            <strong>hoja de inventario</strong>
+          </caption>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Cantidad Minima</th>
+              <th>Categoría</th>
+              <th>Proveedor</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+      <section id="agregarPlato">
+        <h2 class="visually-hidden">agregar plato</h2>
+        <form data-submit="plateMenu" name="menu" method="post" enctype="application/x-www-form-urlencoded"
+          accept-charset="UTF-8" autocomplete="off">
+          <fieldset id="ingredientInputs">
+            <legend><strong>Ingresar datos del menu</strong></legend>
+            <label for="imgUrl"><input type="file" id="imgUrl" name="imgUrl" required
+                accept=".webp, .jpg, .jpeg"></label>
+            <label for="title">
+              <input type="text" id="title" name="title" required>
+              <span>Titulo:</span>
+            </label>
+            <label for="price">
+              <input type="number" id="price" name="price" step="0.01" required>
+              <span>Precio:</span>
+            </label>
+            <label for="category">
+              <select id="category" name="category" title="seleccione categoria" required>
+                <option value="" disabled selected></option>
+                <option value="Arepas">Arepas</option>
+                <option value="Sandwich">Sandwich</option>
+                <option value="Entrantes">Entrantes</option>
+                <option value="Postres">Postres</option>
+                <option value="Platos Especiales">Platos Especiales</option>
+                <option value="Platos Combinados">Platos Combinados</option>
+                <option value="Ensaladas">Ensaladas</option>
+                <option value="Extras">Extras</option>
+                <option value="Bocadillos">Bocadillos</option>
+                <option value="Hambuguesas">Hambuguesas</option>
+                <option value="Cocktails">Cocktails</option>
+                <option value="Refrescos">Refrescos</option>
+                <option value="Batidos Tropicales">Batidos Tropicales</option>
+                <option value="Cafe">Cafe</option>
+              </select>
+              <span>Categoria:</span>
+            </label>
+            <button type="button">Añadir Ingredientes</button>
+            <button type="submit" class="plato">Agregar Plato</button>
+          </fieldset>
+        </form>
+      </section>
+      <section id="caja" class="caja">
+        <h2 class="visually-hidden">caja</h2>
+        <search>
+          <label for="plate">Producto:</label>
+          <input type="search" id="plate" name="plate" placeholder="Buscar plato...">
+        </search>
+        <button type="button" id="sectionAvailablePlates">Activar</button>
+        <article id="menu-comandas">
+          <h2 class="visually-hidden">menu y pedidos</h2>
+          <article id="platos-lista">
+            <h2 class="visually-hidden">menu</h2>
+          </article>
+          <div id="pedidos"></div>
+          <!--semanticamente es mejor un article que este div pero no se comporta igual-->
+        </article>
+      </section>
+      <section id="reservation">
+        <h2 class="visually-hidden">reservation</h2>
+        <form data-submit="reservations" name="reservation" method="post" enctype="application/x-www-form-urlencoded"
+          accept-charset="UTF-8" autocomplete="off">
+          <fieldset>
+            <legend><strong>hacer reserva</strong></legend>
+            <label for="reservationDate">Elija fecha: </label>
+            <input type="date" id="reservationDate" name="reservationDate" required>
+            <label for="reservationTime">Elija hora: </label>
+            <input type="time" id="reservationTime" name="reservationTime" required>
+            <label for="name">
+              <input type="text" id="name" name="name" required>
+              <span>Nombre: </span>
+            </label>
+            <label for="telephon">
+              <input type="tel" id="telephon" name="telephon" required pattern="[0-9]{9,15}"
+                title="Debe contener entre 9 y 15 dígitos numéricos." maxlength="15">
+              <span>625 879 645</span></label>
+            <label for="table">
+              <input type="text" id="table" name="table" required>
+              <span>Mesa para: </span>
+            </label>
+            <label for="email">
+              <input type="email" id="email" name="email" required autocomplete="email">
+              <span>example@gmail.com </span>
+            </label>
+            <label for="password">
+              <input type="password" id="password" class="password" placeholder="*********"
+                pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
+                title="La contraseña debe contener números,letras mayúsculas y minúsculas, y tener al menos 8 caracteres."
+                name="password" required autocomplete="new-password">
+              <span>Contraseña:</span>
+            </label>
+            <label for="confirmPasswordReservation">
+              <input type="password" id="confirmPasswordReservation" class="password" placeholder="*********"
+                pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
+                title="La contraseña debe contener números,letras mayúsculas y minúsculas, y tener al menos 8 caracteres."
+                required autocomplete="new-password">
+              <span>Confirmar contraseña:</span>
+            </label>
+            <label for="creditCard">
+              <input type="text" id="creditCard" name="creditCard" inputmode="numeric" autocomplete="cc-number"
+                pattern="[0-9\s]{13,19}" required>
+              <span>1234 5678 9012 3456</span>
+            </label>
+            <label for="expiryDate">Fecha de vencimiento:</label>
+            <input type="date" id="expiryDate" name="expiryDate" required>
+            <label for="cvv"><input type="text" id="cvv" autocomplete="cc-csc" name="cvv" inputmode="numeric"
+                pattern="\d{3,4}" required>
+              <span>CVV:</span>
+            </label>
+            <label for="allergies">
+              <input type="text" id="allergies" name="allergies" value required>
+              <span>¿Alergias?</span>
+            </label>
+            <button type="submit">Reservar</button>
+          </fieldset>
+        </form>
+        <search>
+          <label for="searchReservation">Reserva:</label>
+          <input type="search" id="searchReservation" name="searchReservation" placeholder="Buscar reserva...">
+        </search>
+        <table id="tableReservation" aria-label="Tabla de reservas">
+          <caption>
+            <strong>hoja de Reservas</strong>
+          </caption>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Mesa Para</th>
+              <th>Telefono</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Alergias</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+      <section id="list">
+        <h2 class="visually-hidden">tareas</h2>
+        <article id="toDoList">
+          <h2 class="visually-hidden">toDoList</h2>
+          <!--igual que en caja mejor es un article que un div-->
+          <div id="shoppingList"></div>
+          <div id="mealPrepList"></div>
+        </article>
+      </section>
+      <section id="unavailablePlates">
+        <h2 class="visually-hidden">toDoList</h2>
+        <button type="button" id="sectionUnavailablePlates">habilitar plato</button>
+        <div id="unavailables"></div>
+      </section>
+      <section id="Losses">
+        <h2 class="visually-hidden">perdidas</h2>
+        <form data-submit="wastageSubmit" name="waste" method="post" accept-charset="UTF-8" autocomplete="on">
+          <fieldset>
+            <legend><strong>Ingresar datos de la merma</strong></legend>
+            <search>
+              <label for="wastageProduct">
+                <input type="text" id="wastageProduct" name="wastageProduct" value required>
+                <span>Producto:</span>
+              </label>
+            </search>
+            <label for="wastage">
+              <input type="number" id="wastage" name="wastage" required>
+              <span>Cantidad:</span>
+            </label>
+            <label for="reason">
+              <select id="reason" name="reason" title="elija motivo de merma" required>
+                <option value="" disabled selected></option>
+                <option value="Expired">Caducado</option>
+                <option value="Damaged">Estropeado</option>
+                <option value="Rejected">Rechazado</option>
+                <option value="Unsold">No se vendio</option>
+              </select>
+              <span>Motivo:</span>
+            </label>
+            <button type="submit">Enviar merma</button>
+          </fieldset>
+        </form>
+        <table id="tablaMerma" aria-label="Tabla de mermas">
+          <caption>
+            <strong>hoja de mermas</strong>
+          </caption>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Motivo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+      <section id="orderPaid">
+        <h2 class="visually-hidden">comandas</h2>
+      </section>
+      <section id="clientes">
+        <h2 class="visually-hidden">clientes</h2>
+        <form action="/" name="configuracionRestaurante" method="post" enctype="application/x-www-form-urlencoded"
+          accept-charset="UTF-8" autocomplete="off">
+          <fieldset>
+            <legend><strong>Enviar mensajes</strong></legend>
+            <label for="nombreContacto">
+              <input type="text" id="nombreContacto" name="nombreContacto" required autocomplete="name">
+              <span>Nombre:</span>
+            </label>
+            <search>
+              <label for="emailContacto">
+                <input type="email" id="emailContacto" name="emailContacto" autocomplete="email" required>
+                <span>Email:</span>
+              </label>
+            </search>
+            <label for="mensajeContacto">
+              <textarea id="mensajeContacto" name="mensajeContacto" rows="4" maxlength="100" required></textarea>
+              <span>Mensaje:</span>
+            </label>
+            <button type="button">Enviar Mensaje</button>
+          </fieldset>
+        </form>
+        <table id="tablaClientes" aria-label="Tabla info clientes">
+          <caption>
+            <strong>hoja de clientes</strong>
+          </caption>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Telefono</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+      <section id="gestionPersonal">
+        <h2 class="visually-hidden">gestion personal</h2>
+        <form data-submit="employeeSubmit" name="register" method="post" enctype="application/x-www-form-urlencoded"
+          accept-charset="UTF-8" autocomplete="off">
+          <fieldset id="employeeInputs">
+            <legend><strong>Gestión del Personal</strong></legend>
+            <label for="nombreEmpleado">
+              <input type="text" id="nombreEmpleado" name="name" value required autocomplete="name">
+              <span>Nombre empleado:</span>
+            </label>
+            <label for="puesto">
+              <input type="text" id="puesto" name="job" value required autocomplete="organization-title">
+              <span>Puesto:</span>
+            </label>
+            <label for="tel">
+              <input type="tel" id="tel" name="telephon" required pattern="[0-9]{9,15}"
+                title="Debe contener entre 9 y 15 dígitos numéricos." maxlength="15">
+              <span>675 543 618</span>
+            </label>
+            <label for="salary">
+              <input type="number" id="salary" name="salary" required>
+              <span>salario:</span>
+            </label>
+            <label for="correo">
+              <input type="email" id="correo" name="email" required autocomplete="email">
+              <span>example@gmail.com</span>
+            </label>
+            <label for="contraseña">
+              <input type="password" id="contraseña" name="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
+                title="La contraseña debe contener al menos un número, una letra mayúscula y una letra minúscula, y tener al menos 8 caracteres."
+                required autocomplete="new-password">
+              <span>Contraseña:</span></label>
+            <label for="confirmPassword"><input type="password" id="confirmPassword"
+                pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
+                title="La contraseña debe contener al menos un número, una letra mayúscula y una letra minúscula, y tener al menos 8 caracteres."
+                required autocomplete="new-password">
+              <span>Confirmar Contraseña:</span>
+            </label>
+            <button type="submit">Agregar Empleado</button>
+          </fieldset>
+        </form>
+        <table id="tablaEmpleados" aria-label="Tabla info empleados">
+          <caption>
+            <strong>Lista De Empleados</strong>
+          </caption>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Puesto</th>
+              <th>Telefono</th>
+              <th>Salario</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+      <section id="estadisticasVentas">
+        <h2 class="visually-hidden">estadisticas</h2>
+        <select id="selectedPeriod" title="filtar por dia,mes y año">
+          <option value="day">Día</option>
+          <option value="month">Mes</option>
+          <option value="year">Año</option>
+        </select>
+        <canvas id="graficoVentas"></canvas>
+      </section>
+      <section id="reportesFinancieros">
+        <h2 class="visually-hidden">reportes financieros</h2>
+        <table id="salesByMonth" aria-label="Tabla de reportes financieros">
+          <caption>
+            <p>NOMBRE: AMAJOH</p>
+            <p>CIF: J09702291</p>
+            <strong>VENTAS DEL MES</strong>
+          </caption>
+          <thead>
+            <tr>
+              <th>Dia</th>
+              <th>Tarjeta</th>
+              <th>Efectivo</th>
+              <th>Maquinas Recreativas</th>
+              <th>Glovo</th>
+              <th>Tienda Online</th>
+              <th>Total TPV</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button type="button" id="generatePDF">Generar Reporte</button>
+      </section>
+      <section id="ayuda">
+        <h2>Ayuda</h2>
+        <p>Aquí puedes encontrar recursos de ayuda y documentación.</p>
+        <button>Ver Documentación</button>
+        <ul>
+          <li><a href="faq.html">Preguntas Frecuentes</a></li>
+          <li><a href="tutorial.html">Tutorial de Uso</a></li>
+        </ul>
+      </section>
+    </article>
+  </main>
+  <footer>
+    <address>
+      <ul class="social-icons">
+        <li>
+          <p>© AMAJOH</p>
+        </li>
+        <li>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/amajohan.041020/" title="facebook"
+            aria-label="facebook AMAJOH"><img
+              src="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_webp,q_auto:eco/v1714231224/menu/facebook_zmmjop.webp"
+              alt="Ir al Facebook de AMAJOH" loading="eager"></a>
+        </li>
+        <li>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/amajoh2021/"
+            title="Ícono Instagram" aria-label="Instagram AMAJOH"><img
+              src="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_webp,q_auto:eco/v1714231230/menu/instagram_kyk1rs.webp"
+              alt="Ir al Instagram de AMAJOH" loading="eager"></a>
+        </li>
+      </ul>
+    </address>
+  </footer>
+  <script type="module" src="/JavaScript/POSoperation/showSection.js"></script>
+  <script type="module" src="/JavaScript/POSoperation/initApp.js" async></script>
+  <script type="module" src="/JavaScript/POSoperation/sidebar.js"></script>
+  <script type="module" src="/JavaScript/helpers/checkAuth.js"></script>
+  <script type="module" src="/JavaScript/helpers/generatePDF.js"></script>
+  <script type="module" src="/JavaScript/helpers/confirmPasword.js"></script>
+  <script type="module" src="/JavaScript/helpers/addIngredient.js"></script>
+  <script type="module" src="/JavaScript/helpers/functionCheckbox.js"></script>
+  <script type="module" src="/JavaScript/api/requestHandler.js"></script>
+  <script type="module" src="/JavaScript/api/delete.js"></script>
+  <script type="module" src="/JavaScript/api/post.js"></script>
+  <script type="module" src="/JavaScript/api/put.js"></script>
+  <script type="module" src="/JavaScript/logic/post/renderOrder.js"></script>
+  <script type="module" src="/JavaScript/logic/post/createOrderLocal.js"></script>
+  <script type="module" src="/JavaScript/logic/put/paintOrderItem.js"></script>
+  <script type="module" src="/JavaScript/logic/get/createPlateElement.js"></script>
+  <script type="module" src="/JavaScript/logic/get/paintingPlates.js"></script>
+  <script type="module" src="/JavaScript/logic/get/orderPainting.js"></script>
+  <script type="module" src="/JavaScript/logic/get/processPlatesData.js"></script>
+  <script type="module" src="/JavaScript/logic/get/updateTables.js"></script>
+  <script type="module" src="/JavaScript/api/gets.js"></script>
+  <script type="module" src="/JavaScript/events/deleteAndPutHandlers.js"></script>
+  <script type="module" src="/JavaScript/events/getHandlers.js"></script>
+  <script type="module" src="/JavaScript/events/postHandlers.js"></script>
+  <script type="module" src="/JavaScript/events/putHandlers.js"></script>
+  <script type="module" src="/JavaScript/mostrarDocumentacion.js"></script>
+  <script type="module" src="/JavaScript/enviarMensajes.js"></script>
+  <script type="module" src="/JavaScript/helpers/watermark.js"></script>
+  <script type="module" src="/JavaScript/helpers/inputFile.js"></script>
+</body>
+
+</html>

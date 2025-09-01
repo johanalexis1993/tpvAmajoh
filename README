@@ -1,0 +1,167 @@
+"cosas que no pudo hacer chat gpt": simular el comportamiento de un div en un article
+"TRABAJO PENDIENTE"
+"NOMBRE DE FUNCIONES Y VARIABLES" nombres mas descriptivos y traducir a ingles lo que este en español.
+"OPTIMIZAR SERVER" como optimize los controladores y los .populate, verificar si necesito todos los datos para saber cuales incluyo o cuales excluyo en el .populate solo falta revisar los controladores "order" y "wastage"
+"pensar en que utilizar el gps que me da el html de los usuarios ya que con html5 podemos acceder a la ubicacion y utilizarlo en tienda ONLINE"
+"REVICION DE TPV" revisar
+"revizar INGREDIENTES" mirar si los nombres de los ingredientes son correctos(revizar si se estan subiendo los datos en la BBDD,si se duplican si se borran, todo)
+
+- hacer media query de movil aside tiene que ocupar 100% y interuptures enseciones para mostrar form o tabla.
+- mirar si la funcion de "PDF" la podemos reutilizar en la funcion de la graficas para convertir la grafica en "PDF".
+- la funcion de PDF quitar del front y que se creen en servidor.
+- inputs de fecha y hora combinar en un input.
+- Podrías considerar scope="col" en los <th> para mejorar compatibilidad con lectores de pantalla: <th scope="col">Producto</th>
+  "TRABAJO QUE SE DEJA PRENDIE"
+- en los labels primero va el texto y despues el input.
+- buscar las fotos del logo de facebook y instagram ideales (aunque mejora las buenas practicas).
+- "SECTION DE MULTICONTROL" aqui no se a empezado nada.
+- "SECTION CLIENTES": estudiar la api de gmail para configurar la peticion post y poder enviar correos.
+- se nesecita hacer un polyfill para el atributo "inputmode" pero para no cargar el codigo funte se introduce los que se necesitan, ¡pero hay que prepararlos!.
+- si hay problemas en los inputs type="date" cambiar a type="text"
+- implementar "wed workers" para mejorar el hilo.
+- con proxy modificamos "javascript" aver si ingeniamos algo para mejorar arranque.
+- cuando se termine el proyecto al igual que hice con el master y el tpv documentar cada detalle que susedio y aprendi en este proyecto "TPV".
+
+├───TPV/
+├───public/
+│ ├───assets/
+│ │ ├───alerjenos/
+│ │ └───Orders.pm3
+│ ├───CSS/
+│ │ ├───buttons.css
+│ │ ├───forms.css
+│ │ ├───general.css
+│ │ ├───header-footer.css
+│ │ ├───headings.css
+│ │ ├───images.css
+│ │ ├───layout.css
+│ │ ├───scrollbar.css
+│ │ ├───sidebar.css
+│ │ ├───tables.css
+│ │ └───var.css
+│ ├───JavaScript/
+│ │ ├───POSoperation/
+│ │ │ ├───initApp.js
+│ │ │ ├───sidebar.js
+│ │ │ └───showSection.js
+│ │ │
+│ │ ├───api/
+│ │ │ ├───requestHandler.js
+│ │ │ ├───gets.js
+│ │ │ ├───post.js
+│ │ │ ├───put.js
+│ │ │ └───delete.js
+│ │ │
+│ │ ├───events/
+│ │ │ ├───getHandlers.js
+│ │ │ ├───postHandlers.js
+│ │ │ ├───putHandlers.js
+│ │ │ └───deleteAndPutHandlers.js
+│ │ ├───logic/
+│ │ │ ├───delete/
+│ │ │ │ └───updateUIAfterDelete.js
+│ │ │ ├───get/
+│ │ │ │ ├───autocomplete.js
+│ │ │ │ ├───orderPainting.js
+│ │ │ │ ├───updateTables.js
+│ │ │ │ ├───createPlateElement.js
+│ │ │ │ ├───paintingPlates.js
+│ │ │ │ ├───renderList.js
+│ │ │ │ └───processPlatesData.js
+│ │ │ ├───post/
+│ │ │ │ ├───createOrderLocal.js
+│ │ │ │ ├───updateUIAfterPost.js
+│ │ │ │ └───renderOrder.js
+│ │ │ └───put/
+│ │ │ ├───paintOrderItem.js
+│ │ │ ├───updateUIAfterPut.js
+│ │ │ ├───createOrderElements.js
+│ │ │ ├───appendOrderElementsToDom.js
+│ │ │ └───createAndConfigureButtons.js
+│ │ └───helpers/
+│ │ ├───checkAndPlaySound.js
+│ │ ├───togglePlateButtons.js
+│ │ ├───confirmPasword.js
+│ │ ├───functionCheckbox.js
+│ │ ├───generatePDF.js
+│ │ ├───handleInputEvent.js
+│ │ ├───renderChart.js
+│ │ ├───delegarEvents.js
+│ │ ├───checkAuth.js
+│ │ ├───watermark.js
+│ │ └───addIngredient.js
+│ │───index.html
+│ ├───register.html
+│ ├───TPV.html
+│ └──────robots.txt
+│──────package.json
+│────────package-lock.json
+│──────.env
+└──────.vite.config.js
+
+tego en el front-end un ahorro potencial de 386 kib pero con la configuracion actual que tengo en el servidor que no funciona bien paso de 386 kib a 360 kib poco y al igual que este middleware global los demas que estan comentados no funcionan y no se si estan mal configurados
+
+'HISTORICO DE RESERVAS' por dia mes y año
+"hitorial de ventas" por dia, mes y año
+"historico de ventas de trabajadores" me permitirá monitorear tendencias a lo largo del tiempo o si se mantiene y tomar decisiones informadas sobre incentivos, capacitación, etc.
+"que productos venden" saber que productos venden los trabajadores para saber que productos venden mejor y cuales les cuesta vender, saber que productos le gusta mas a cada cliente individual y podemos aprovechar las imagenes
+"ventas" saber el total de lo que vende cada trabajador, total de online, total de restaurante, maquinas recreativas y glovo
+"productos del menu" un ranquin actulizado para saber cual es el producto que mas se vende y menos
+"la direccion" en la direcion de los clientes la podemos utilizar para saber que zonas nos conocen y cuales no
+"preferencia en donde comer" ya que se guardan los datos de los clientes saber el porcentaje de conde prefiere comer si en casa o restaurante y conque fecuencia compran(los pedidos que hace por mes o diario)
+"con que frecuencia compra" Identificar que clientes compran mas y menos y premiar a los clientes frecuentes para fomentar la lealtad (un programa de fidelizacion).
+"margen de ganancias"saber el costo de los productos vendidos y ganancias, salarios de los trabajadores.
+'Valor de vida del cliente (CLV)': Calcular el CLV para determinar el valor total que un cliente aporta a tu negocio a lo largo del tiempo.
+'Promociones y descuentos':Analizar la efectividad de las promociones y descuentos ofrecidos.
+Evaluar cómo las promociones afectan las ventas de diferentes productos y ajustar las estrategias de marketing.
+'horas de trafico' una grafica para ver trafico de clientes para ver hora de mayor y menor trafico en tienda fisica y restaurante
+'reservas' saber que dias y meses del año suelen hacer mas recervas
+'EVENTOS DEL SERVIDOR' cuando ya este esto quitar el setInterval de getOrder
+
+'copia del resumen de estos dos años de mi y el proyecto'
+Johan Alexis – Desarrollador Full Stack Junior con Mentalidad de Arquitecto
+Resumen Profesional
+Soy desarrollador full stack junior con mentalidad de arquitecto de software, metódico, disciplinado y lógico. Mi trayectoria combina experiencia en oficios prácticos (electricidad, albañilería, fontanería, carnicería y hostelería) con programación. Abrí mi propio restaurante y la necesidad de reducir costes me llevó a aprender programación para desarrollar un TPV propio. Lo que empezó como una necesidad se volvió una pasión: miles de horas de práctica, pruebas, errores y mejora constante.
+Busco trabajar en startups o empresas full stack que valoren autonomía, aprendizaje continuo y buenas prácticas. Mi enfoque combina desarrollo funcional, optimización de performance, seguridad y claridad de código, con capacidad de colaborar y aprender de equipos más experimentados.
+Proyecto Destacado: TPV Full Stack – AMAJOH TPV
+Objetivo: Solución completa para la gestión de restaurantes y pequeños negocios, incluyendo inventario, menú, pedidos, reservas, clientes, empleados, mermas y reportes financieros.
+Frontend: HTML5 semántico y accesible; CSS modular y responsive con REM y clamp(); JavaScript modularizado con SPA routing artesanal (#hash, persistencia de secciones en localStorage). Animaciones optimizadas con requestAnimationFrame y requestIdleCallback. Tablas dinámicas, listas, gráficos interactivos y notificaciones con sonido.
+Backend: Node.js con Express; MongoDB/Mongoose; JWT y bcrypt para autenticación segura; dotenv y cors para configuración y seguridad. Arquitectura modular con rutas por recurso, middlewares, validaciones robustas y Fetch API con async/await y control de errores.
+Infraestructura y Build: Vite para fragmentación de código y build optimizado; .env para configuración de la API; vite.config.js personalizado; robots.txt y sitemap.xml para control de indexación SEO.
+Optimización y rendimiento: Login, registro y home cargan en <1s; ahorro de recursos de hasta 386 KiB; control defensivo de errores; preparación de web workers y mejoras de middleware.
+Documentación y mejoras futuras: Migración de PDFs al backend, integración de GPS HTML5, Gmail API para envíos, scope en tablas para accesibilidad, polyfills y optimización de inputs.
+Habilidades Técnicas (Hard Skills)
+Frontend: HTML5 semántico, CSS3 responsive y modular, animaciones optimizadas, accesibilidad, DOM dinámico, SPA routing y microinteracciones.
+Backend: Node.js, Express, MongoDB/Mongoose, JWT, bcrypt, validaciones, middlewares organizados, generación de PDFs, control de queries y datos.
+JavaScript avanzado: Modularización, async/await, Fetch API, promesas, helpers reutilizables, tablas, gráficos, notificaciones y lógica de negocio compleja.
+Herramientas y metodologías: Vite, DevTools, scrapping web, refactorización, documentación de aprendizaje, buenas prácticas, control de errores, separación de responsabilidades.
+Habilidades Blandas (Soft Skills)
+Aprendizaje autónomo y rápido, resolución de problemas complejos.
+Lógica, disciplina y meticulosidad en cada proyecto.
+Resiliencia y visión emprendedora.
+Mentoría implícita a través del código.
+Curiosidad tecnológica y análisis de métricas de negocio.
+Transparencia, colaboración y apertura al feedback.
+Impacto y Métricas del Proyecto
+Históricos de ventas y reservas por día, mes y año.
+Análisis de clientes: frecuencia de compra, preferencias, dirección, CLV.
+Optimización de ventas: ranking de productos más vendidos, efectividad de promociones y descuentos.
+Gestión de personal: ventas por trabajador, incentivos y capacitación.
+Análisis operativo: horas de tráfico de clientes, pedidos online vs. restaurante, márgenes de ganancias, generación de PDFs y reportes automatizados.
+Experiencia trabajando con IA
+Colaboración con ChatGPT como asistente técnico: documentación, revisión de arquitectura, extracción de habilidades técnicas y blandas, y validación de decisiones.
+Rol de IA: apoyo para estructurar y organizar; yo tomé decisiones y ejecuté el código.
+Aprendizaje: metodología de verificación y validación de resultados, potenciando la productividad y autonomía.
+Objetivos Profesionales
+Aplicar conocimientos en startups o equipos full stack que valoren autonomía, claridad y rendimiento.
+Aprender frameworks modernos (React, Vue) si el equipo lo requiere, manteniendo dominio total de JavaScript puro.
+Contribuir a la mejora continua, documentación y análisis de métricas de negocio.
+
+
+Mi TPV, construido solo con HTML5, CSS3 y ES6+, está optimizado para ejecutarse en ráfagas de descarga, sin depender de frameworks. Al analizar los resultados en Lighthouse, me sorprendió la alta performance y me pregunté: las performance es buena ¿es por qué no tengo usuarios?.
+
+Esa reflexión me llevó a revisar cada detalle: la espera en el render de tablas era por una petición GET con datos reales. Para optimizarlo, implementé paginación y construí el skeleton de la tabla mientras llegaban los datos (sin cache), logrando carga instantánea y 100% en accesibilidad, SEO y mejores prácticas (performance 98%).
+
+Además, las validaciones no solo están en el backend, sino también en HTML y JavaScript. 
+
+Reflexión: entender los fundamentos me permitió aplicar soluciones efectivas, incluso sin frameworks como React, aunque me inspiré en sus soluciones (esa experiencia gratuita vale oro). Me interesa saber: ¿cómo equilibran ustedes performance, validaciones y experiencia de usuario en proyectos reales?

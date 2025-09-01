@@ -1,0 +1,81 @@
+img {
+  width: var(--1-87rem);
+  height: var(--1-87rem);
+  border-radius: var(--04rem);
+}
+#unavailables ul,
+#platos-lista ul,
+#orderPaid ul,
+#clientes fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#orderPaid ul {
+  gap: var(--5rem);
+}
+#unavailables > ul > li,
+#platos-lista > ul > li {
+  margin: 15px;
+  box-shadow: 0px 6px 23px -15px rgba(0, 0, 0, 0.75);
+  padding: 1rem var(--032rem);
+  transition: transform 0.3s;
+}
+#unavailables > ul > li:hover,
+#platos-lista > ul > li:hover {
+  transform: scale(1.1);
+}
+#platos-lista {
+  overflow: visible;
+}
+#unavailables img,
+#platos-lista img {
+  width: var(--9rem);
+  height: var(--6rem);
+  border-radius: var(--062rem);
+}
+#unavailables p,
+#platos-lista p {
+  margin: var(--032rem) 0;
+}
+.has-tooltip {
+  position: relative;
+  z-index: 1;
+}
+.has-tooltip:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+.tooltip,
+.tpv-tooltip {
+  position: absolute;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  border-radius: var(--032rem);
+  opacity: 0;
+  z-index: 1000;
+}
+.tooltip {
+  padding: 0 var(--05rem);
+  display: block;
+  flex-direction: column;
+  min-width: auto;
+  min-height: auto;
+  color: var(--black);
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.2);
+  bottom: 70%;
+  left: 0;
+  margin-left: calc(-1 * var(--6rem));
+  transition: opacity 0.3s;
+  overflow: visible;
+}
+.tpv-tooltip {
+  background: rgba(0, 0, 0, 0.75);
+  color: var(--text-white);
+  padding: var(--025rem) var(--05rem);
+  font-size: 0.75rem;
+  transition: opacity 0.15s ease;
+}

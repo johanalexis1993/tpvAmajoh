@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="keywords" content="TPV gratis,mejorar negocio,amajoh,economico,AMAJOH TPV,TPV para empresas pequeñas">
+  <meta name="author" content="Johan Alexis">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="una solucion para pequeñas empresas,justo para emprendedores y muy economico aparte de ser completa y para todo tipo de negocios">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+           script-src 'self';
+           style-src 'self' 'unsafe-inline';
+           img-src 'self' https://res.cloudinary.com;
+           connect-src 'self' http://localhost:3000;
+           font-src 'self';
+           object-src 'none';
+           base-uri 'self';">
+  <link rel="preconnect" href="https://res.cloudinary.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Registro - AMAJOH TPV">
+  <meta property="og:description" content="Regístrate en AMAJOH TPV y empieza a gestionar tu negocio fácilmente.">
+  <meta property="og:image"
+    content="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_auto,q_auto:eco/v1714231224/menu/amajoh_yeqekh.webp">
+  <meta property="og:url" content="https://tpv-amajoh.netlify.app">
+  <link rel="icon"
+    href="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_auto,q_auto:eco/v1714231224/menu/amajoh_yeqekh.webp"
+    type="image/webp">
+  <link rel="canonical" href="https://tpv-amajoh.netlify.app/register">
+  <link rel="preconnect" href="https://www.facebook.com">
+  <link rel="preconnect" href="https://www.instagram.com">
+  <link rel="stylesheet" href="/CSS/general.css">
+  <link rel="stylesheet" href="/CSS/var.css">
+  <link rel="stylesheet" href="/CSS/layout.css">
+  <link rel="stylesheet" href="/CSS/header-footer.css">
+  <link rel="stylesheet" href="/CSS/scrollbar.css">
+  <link rel="stylesheet" href="/CSS/images.css">
+  <link rel="stylesheet" href="/CSS/forms.css">
+  <link rel="stylesheet" href="/CSS/buttons.css">
+  <link rel="stylesheet" href="/CSS/headings.css">
+  <title>Sign Up</title>
+</head>
+
+<body>
+  <header>
+    <h1>Sign Up</h1>
+  </header>
+  <main id="register">
+    <form data-submit="register" action="/api/v1/users/register" name="register" method="post"
+      enctype="application/x-www-form-urlencoded" accept-charset="UTF-8" autocomplete="off">
+      <fieldset>
+        <legend><strong>Crear una cuenta</strong></legend>
+        <label for="name">
+          <input type="text" id="name" name="name" required>
+          <span>Nombre:</span>
+        </label>
+        <label for="email">
+          <input type="email" id="email" name="email" required autocomplete="email">
+          <span>Correo electrónico:</span>
+        </label>
+        <label for="password"><input type="password" id="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
+            title="La contraseña debe contener al menos un número, una letra mayúscula y una letra minúscula, y tener al menos 8 caracteres."
+            name="password" required autocomplete="new-password">
+          <span>Contraseña:</span>
+        </label>
+        <label for="password"><input type="password" id="confirmarPassword"
+            pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
+            title="La contraseña debe contener al menos un número, una letra mayúscula y una letra minúscula, y tener al menos 8 caracteres."
+            required autocomplete="new-password">
+          <span>Confirmar Contraseña:</span>
+        </label><!--antes utilizava confirmarPassword y funcionava sino mirar codigo y corregirlo JOHAN-->
+        <label for="telephon">
+          <input type="tel" id="telephon" name="telephon" required pattern="[0-9]{9,15}"
+            title="Debe contener entre 9 y 15 dígitos numéricos." maxlength="15">
+          <span>Telefono:</span>
+        </label>
+        <label for="creditCard"><input type="text" id="creditCard" name="creditCard" inputmode="numeric"
+            pattern="[0-9\s]{13,19}" required>
+          <span>1234 5678 9012 3456</span>
+        </label>
+        <label for="expiryDate">Fecha de vencimiento:</label>
+        <input type="date" id="expiryDate" name="expiryDate" required>
+        <label for="cvv"> <input type="text" id="cvv" name="cvv" inputmode="numeric" pattern="\d{3,4}" required>
+          <span>CVV:</span>
+        </label>
+        <label for="cifOrAutonomo">
+          <input type="text" id="cifOrAutonomo" name="cifOrAutonomo" required>
+          <span>CIF o Nº autónomo:</span>
+        </label>
+        <label for="restaurantName">
+          <input type="text" id="restaurantName" name="restaurantName" required>
+          <span>Nombre negocio:</span>
+        </label>
+        <label for="address">
+          <input type="text" id="address" name="address" value required>
+          <span>Dirección:</span>
+        </label>
+        <label for="whatTypeOf">
+          <input type="text" id="whatTypeOf" name="whatTypeOf" value required>
+          <span>Tipo de Cocina:</span>
+        </label>
+        <button type="submit">Registrarse</button>
+      </fieldset>
+    </form>
+    <p>
+      ¿Ya tienes una cuenta? <a href="/index.html">Inicia sesión aquí</a>.
+    </p>
+  </main>
+  <footer>
+    <address>
+      <ul class="social-icons">
+        <li>
+          <p>© AMAJOH</p>
+        </li>
+        <li>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/amajohan.041020/" title="facebook"
+            aria-label="facebook AMAJOH"><img
+              src="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_auto,q_auto:eco/v1714231224/menu/facebook_zmmjop.webp"
+              alt="Ir al Facebook de AMAJOH" loading="eager"></a>
+        </li>
+        <li>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/amajoh2021/"
+            title="Ícono Instagram" aria-label="Instagram AMAJOH"><img
+              src="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_auto,q_auto:eco/v1714231230/menu/instagram_kyk1rs.webp"
+              alt="Ir al Instagram de AMAJOH" loading="eager"></a>
+        </li>
+      </ul>
+    </address>
+  </footer>
+  <script type="module" src="/JavaScript/helpers/confirmPasword.js"></script>
+  <script type="module" src="/JavaScript/events/postHandlers.js"></script>
+</body>
+
+</html>
