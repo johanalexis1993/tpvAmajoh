@@ -74,8 +74,3 @@
 │────────package-lock.json
 │──────.env
 └──────.vite.config.js
-Esa reflexión me llevó a revisar cada detalle: la espera en el render de tablas era por una petición GET con datos reales. Para optimizarlo, implementé paginación y construí el skeleton de la tabla mientras llegaban los datos (sin cache), logrando carga instantánea y 100% en accesibilidad, SEO y mejores prácticas (performance 98%).
-
-Además, las validaciones no solo están en el backend, sino también en HTML y JavaScript. 
-
-Reflexión: entender los fundamentos me permitió aplicar soluciones efectivas, incluso sin frameworks como React, aunque me inspiré en sus soluciones (esa experiencia gratuita vale oro). Me interesa saber: ¿cómo equilibran ustedes performance, validaciones y experiencia de usuario en proyectos reales?
