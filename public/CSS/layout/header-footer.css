@@ -1,0 +1,34 @@
+@layer layout {
+  header,
+  footer {
+    background: var(--header-footer-color);
+    color: var(--text-white);
+    padding: 0 var(--1-25rem);
+  }
+  header {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    li {
+      margin: var(--062rem);
+    }
+    img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

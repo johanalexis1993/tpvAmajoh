@@ -1,5 +1,5 @@
-import { toggleBlinkingEffect } from '../../helpers/checkAndPlaySound'
-import { createOrUpdateCategoryContainer } from '../get/paintingPlates'
+import { toggleBlinkingEffect } from '../../helpers/checkAndPlaySound.js'
+import { createOrUpdateCategoryContainer } from '../get/paintingPlates.js'
 export const updateLine = (columnas, formData, celdas) => {
   for (const [key, value] of formData.entries()) {
     const columna = columnas.editables.find((col) => col.nombre === key)

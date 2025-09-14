@@ -1,4 +1,4 @@
-import { postRequest, showError } from './requestHandler'
+import { postRequest, showError } from './requestHandler.js'
 import {
   paintOrderInDom,
   updateTableAmount
@@ -53,7 +53,7 @@ export const postLogin = async (form) => {
     const token = response.token
     localStorage.setItem('token', token)
     localStorage.setItem('userId', userId)
-    window.location.href = '/TPV.html#inventario'
+    window.location.href = '/tpv.html#inventario'
   } catch (error) {
     showError('Error al iniciar sesión', error)
   }

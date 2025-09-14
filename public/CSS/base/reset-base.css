@@ -1,0 +1,59 @@
+@layer base {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+  }
+  html {
+    font-size: clamp(13px, 1vw + 4px, 32px);
+  }
+  body {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    background: var(--background-body);
+    height: 100vh;
+  }
+  #estadisticasVentas {
+    width: 100%;
+    height: 100%;
+    border: var(--007rem) solid var(--th-td-input-select-button);
+    canvas {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      display: block;
+      contain: layout style;
+    }
+  }
+  /*.has-tooltip,*/
+  label {
+    position: relative;
+  }
+  :where(#unavailables button, #platos-lista button, label) {
+    display: inline-block;
+  }
+  search,
+  form {
+    display: inline;
+  }
+  :where(
+      h1,
+      th,
+      td,
+      fieldset,
+      #ingredientInputs,
+      #unavailables,
+      #unavailables li,
+      #platos-lista,
+      #platos-lista li
+    ) {
+    text-align: center;
+  }
+  #login a,
+  #register a {
+    text-decoration: underline;
+  }
+}

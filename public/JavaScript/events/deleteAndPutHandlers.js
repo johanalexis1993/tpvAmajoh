@@ -1,6 +1,6 @@
 import { eliminarElemento } from '../api/delete.js'
 import { editarElemento } from '../api/put.js'
-import { deleteLine } from '../logic/delete/updateUIAfterDelete'
+import { deleteLine } from '../logic/delete/updateUIAfterDelete.js'
 const agregarEventoTabla = (tablaId, url, columnas) => {
   const tabla = document.querySelector(`#${tablaId}`)
   tabla.addEventListener('click', async (e) => {

@@ -1,0 +1,15 @@
+@layer components {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--1-25rem);
+    th,
+    td {
+      border: var(--007rem) solid var(--th-td-input-select-button);
+    }
+    th {
+      padding: var(--05em);
+      background: var(--th-td-input-select-button);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@layer layout {
+  ::-webkit-scrollbar {
+    width: var(--032rem);
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--text-white);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--background-scroll);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--link-hover-color);
+  }
+}

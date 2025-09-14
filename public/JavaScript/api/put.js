@@ -34,7 +34,7 @@ export const editarElemento = async (url, id, tablaId, columnas) => {
         if (tablaId === 'tablaMerma')
           updateAmount(res, 'tablaInventario', 'PUT')
         updateLine(columnas, formData, celdasFilaActual)
-        if (tablaId === '#tablaInventario') removeProductInDom(res, id)
+        if (tablaId === 'tablaInventario') removeProductInDom(res, id)
         return res
       }
     }

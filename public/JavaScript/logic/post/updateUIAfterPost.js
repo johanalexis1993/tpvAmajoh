@@ -1,5 +1,5 @@
-import { paintOrderItem } from '../put/paintOrderItem'
-import { createPlateElement } from '../get/createPlateElement'
+import { paintOrderItem } from '../put/paintOrderItem.js'
+import { createPlateElement } from '../get/createPlateElement.js'
 export const newLineInTable = (tableId, res, columns) => {
   const tabla = document.querySelector(`#${tableId}`)
   const nuevaFila = document.createElement('tr')

@@ -5,7 +5,7 @@ import {
   getDishes,
   toDoLists,
   historialDeVentas
-} from '../api/gets'
+} from '../api/gets.js'
 import { processPlatesData } from '../logic/get/processPlatesData.js'
 import { actualizarTabla } from '../logic/get/updateTables.js'
 import { handleInputEvent, delegarClicks } from '../helpers/delegarEvents.js'

@@ -1,5 +1,5 @@
-import { autocomplete } from '../logic/get/autocomplete'
-import { getEmail } from '../api/gets'
+import { autocomplete } from '../logic/get/autocomplete.js'
+import { getEmail } from '../api/gets.js'
 export function handleInputEvent(selector, endpoint, mapCallback) {
   const addInputEvent = (element) => {
     element.addEventListener('input', async function () {

@@ -1,4 +1,4 @@
-import { postOrder } from '../../api/post'
+import { postOrder } from '../../api/post.js'
 export const renderOrder = (order) => {
   const container = document.querySelector('#pedidos ol')
   container.innerHTML = ''

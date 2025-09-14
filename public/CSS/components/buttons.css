@@ -1,0 +1,136 @@
+@layer components {
+  input,
+  select,
+  summary,
+  button,
+  textarea {
+    font-size: clamp(0.75rem, 0.8vw + 0.25rem, 1rem);
+    margin: var(--019em);
+    padding: var(--03em);
+    border: var(--001em) solid var(--th-td-input-select-button);
+    border-radius: var(--025em);
+  }
+  label {
+    font-size: var(--09em);
+    position: relative;
+    input,
+    select,
+    textarea {
+      width: 100%;
+      background: transparent;
+    }
+    span {
+      position: absolute;
+      top: 0.2rem;
+      left: var(--05rem);
+      color: var(--background-scroll);
+      pointer-events: none;
+      transition: all 0.2s ease;
+      background: var(--background-body);
+      padding: 0 var(--025rem);
+    }
+    input:focus + span,
+    input:valid + span,
+    select:focus + span,
+    select:valid + span,
+    textarea:focus + span,
+    textarea:valid + span {
+      top: var(--0-1negrem);
+      left: var(--05rem);
+      font-size: var(--05rem);
+      color: var(--background-button);
+    }
+  }
+  #imgUrl {
+    border: none !important;
+    color: var(--red);
+  }
+  summary,
+  button {
+    background: var(--background-button);
+    color: var(--black);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    @media (hover: hover) {
+      &:hover {
+        background: var(--button-hover);
+      }
+    }
+  }
+  summary {
+    margin: 0;
+  }
+  #getReservation summary {
+    width: var(--15-6em);
+  }
+  .blinking {
+    animation: blinkingAnimation 1s infinite;
+  }
+  @keyframes blinkingAnimation {
+    0% {
+      background: transparent;
+    }
+    50% {
+      background: var(--button-hover);
+    }
+    100% {
+      background: transparent;
+    }
+  }
+  #orderPaid li {
+    max-width: var(--10rem);
+  }
+  [data-submit='register'] button {
+    max-width: var(--10rem);
+  }
+  :where(#unavailables, #platos-lista) {
+    @media (hover: hover) {
+      button:hover {
+        background: var(--hoverButton);
+        transform: translateY(-0.19rem);
+        box-shadow: 0 0 var(--032rem) var(--black);
+      }
+    }
+    button {
+      padding: var(--032rem) var(--062rem);
+      background: var(--orange);
+      color: var(--black);
+      border-radius: var(--032rem);
+    }
+  }
+  .input-valid {
+    border-color: green !important;
+  }
+  input.input-valid:focus,
+  select.input-valid:focus,
+  textarea.input-valid:focus {
+    border: 2px solid green !important;
+    outline: none !important;
+  }
+  .upload-status {
+    display: block;
+    margin-top: 0.5rem;
+  }
+  .password-strength-element,
+  .dynamic-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .password-strength-visible,
+  .dynamic-visible {
+    position: static;
+    width: 30%;
+    height: var(--05rem);
+    margin: auto 0 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}

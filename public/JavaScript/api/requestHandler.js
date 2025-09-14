@@ -5,6 +5,7 @@ export const showError = (message, error) => {
 }
 const getToken = () => localStorage.getItem('token')
 const handleResponse = async (response) => {
+  if (response.status === 204) return null
   const responseData = await response.json()
   if (!response.ok)
     throw new Error(responseData.message || 'Error al realizar la operación.')
