@@ -2,6 +2,7 @@ import { putOrder, updateOrderStatus } from '../../api/put.js'
 import { functionCheckbox } from '../../helpers/functionCheckbox.js'
 import { togglePlateButtons } from '../../helpers/togglePlateButtons.js'
 import { triggerCheckAndPlaySound } from '../../helpers/checkAndPlaySound.js'
+import { showToast } from '../../helpers/showToast.js'
 import { moveOrderElement } from './updateUIAfterPut.js'
 import { generateReceipt } from '../../helpers/generatePDF.js'
 let comandaActualizada = false
@@ -42,7 +43,7 @@ export const createAndConfigureButtons = (pedido, pedidoItem) => {
         `#select-payment-method-${pedido._id}`
       )
       if (selectElement && selectElement.value === '')
-        return alert('Por favor, seleccione un método de pago.')
+        return showToast('Por favor, seleccione un método de pago.', 'error')
       const paymentMethod = selectElement.value
       updateOrderStatus(orderId, currentStatus, aceptarBtn, paymentMethod)
       if (!pedido.nameTable) {

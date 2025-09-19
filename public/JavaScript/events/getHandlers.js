@@ -8,7 +8,7 @@ import {
 } from '../api/gets.js'
 import { processPlatesData } from '../logic/get/processPlatesData.js'
 import { actualizarTabla } from '../logic/get/updateTables.js'
-import { handleInputEvent, delegarClicks } from '../helpers/delegarEvents.js'
+import { handleInputEvent, delegarClicks } from '../helpers/delegateEvents.js'
 requestIdleCallback(() => {
   handleSearch(
     '#plate',

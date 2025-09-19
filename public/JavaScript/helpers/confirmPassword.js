@@ -1,3 +1,4 @@
+import { showToast } from './showToast.js'
 requestIdleCallback(() => {
   const check = (input, passwordInput) => {
     const passwordInputElement = document.querySelector(`#${passwordInput}`)
@@ -7,7 +8,7 @@ requestIdleCallback(() => {
     input.style.borderColor = isMatch ? 'green' : 'red'
     if (!isMatch) {
       !input.dataset.alertShown
-        ? (alert('Las contraseñas no coinciden, rectifícalas.'),
+        ? (showToast('Las contraseñas no coinciden, rectifícalas.', 'error'),
           (input.dataset.alertShown = 'true'))
         : (input.dataset.alertShown = 'false')
     }

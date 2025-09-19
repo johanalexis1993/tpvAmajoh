@@ -1,20 +1,23 @@
 ├───TPV/
 ├───public/
 │ ├───assets/
-│ │ ├───alerjenos/
 │ │ └───Orders.pm3
-│ ├───CSS/
-│ │ ├───buttons.css
-│ │ ├───forms.css
-│ │ ├───general.css
-│ │ ├───header-footer.css
-│ │ ├───headings.css
-│ │ ├───images.css
-│ │ ├───layout.css
-│ │ ├───scrollbar.css
-│ │ ├───sidebar.css
-│ │ ├───tables.css
-│ │ └───var.css
+│ ├─CSS/
+│ │ ├─ base/
+│ │ │ ├─ var.css
+│ │ │ ├─ reset-base.css
+│ │ │ └─ typography.css
+│ │ ├─ layout/
+│ │ │ ├─ app-shell.css
+│ │ │ ├─ header-footer.css
+│ │ │ └─ sidebar.css
+│ │ ├─ components/
+│ │ │ ├─ forms.css
+│ │ │ ├─ buttons.css
+│ │ │ ├─ tables.css
+│ │ │ └─ media-tooltips.css
+│ │ ├─ utilities.css
+│ │ └─ main.css
 │ ├───JavaScript/
 │ │ ├───POSoperation/
 │ │ │ ├───initApp.js
@@ -55,22 +58,29 @@
 │ │ │ ├───appendOrderElementsToDom.js
 │ │ │ └───createAndConfigureButtons.js
 │ │ └───helpers/
-│ │ ├───checkAndPlaySound.js
-│ │ ├───togglePlateButtons.js
-│ │ ├───confirmPasword.js
-│ │ ├───functionCheckbox.js
-│ │ ├───generatePDF.js
-│ │ ├───handleInputEvent.js
-│ │ ├───renderChart.js
-│ │ ├───delegarEvents.js
-│ │ ├───checkAuth.js
-│ │ ├───watermark.js
-│ │ └───addIngredient.js
+│ │ │ ├───showToast.js
+│ │ │ ├───checkAndPlaySound.js
+│ │ │ ├───togglePlateButtons.js
+│ │ │ ├───confirmPassword.js
+│ │ │ ├───functionCheckbox.js
+│ │ │ ├───generatePDF.js
+│ │ │ ├───renderChart.js
+│ │ │ ├───delegateEvents.js
+│ │ │ ├───checkAuth.js
+│ │ │ ├───watermark.js
+│ │ │ ├───inputFile.js
+│ │ │ └───addIngredient.js
+│ │ │───showDocumentation.js
+│ │ └───sendMessages.js
 │ │───index.html
 │ ├───register.html
-│ ├───TPV.html
+│ ├───pos.html
+│ │──────sitemap.xml
+│ │──────.env
 │ └──────robots.txt
+│──────_headers
+│──────README.md
+│──────.gitignore
 │──────package.json
-│────────package-lock.json
-│──────.env
+│──────package-lock.json
 └──────.vite.config.js

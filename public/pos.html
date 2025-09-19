@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <title>AMAJOH TPV</title>
+  <title>AMAJOH POS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description"
-    content="Una solución económica, completa y diseñada especialmente para emprendedores y pequeñas empresas de cualquier sector.">
+    content="An affordable, complete solution designed for entrepreneurs and small businesses across any sector.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="author" content="Johan Alexis">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Panel de Control - AMAJOH TPV">
+  <meta property="og:title" content="Control Panel - AMAJOH POS">
   <meta property="og:description"
-    content="Panel interno para gestionar productos, ventas y estadísticas. Solo usuarios registrados.">
+    content="Internal panel to manage products, sales, and statistics. Registered users only.">
   <meta property="og:image"
     content="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_auto,q_auto:eco/v1714231224/menu/amajoh_yeqekh.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Logotipo de AMAJOH">
+  <meta property="og:image:alt" content="AMAJOH logo">
   <meta property="og:url" content="https://tpv-amajoh.netlify.app/">
-  <meta property="og:site_name" content="AMAJOH TPV">
-  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="AMAJOH POS">
+  <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Panel de Control - AMAJOH TPV">
-  <meta name="twitter:description" content="Panel interno para gestionar productos, ventas y estadísticas.">
+  <meta name="twitter:title" content="Control Panel - AMAJOH POS">
+  <meta name="twitter:description" content="Internal panel to manage products, sales, and statistics.">
   <meta name="twitter:image"
     content="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_auto,q_auto:eco/v1714231224/menu/amajoh_yeqekh.webp">
-  <meta name="twitter:image:alt" content="Logotipo de AMAJOH">
+  <meta name="twitter:image:alt" content="AMAJOH logo">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0b0b0b" media="(prefers-color-scheme: dark)">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -42,6 +42,7 @@
   <link rel="stylesheet" href="/CSS/layout/sidebar.css">
   <link rel="stylesheet" href="/CSS/components/forms.css">
   <link rel="stylesheet" href="/CSS/components/buttons.css">
+  <link rel="stylesheet" href="/CSS/components/toast.css">
   <link rel="stylesheet" href="/CSS/components/tables.css">
   <link rel="stylesheet" href="/CSS/components/media-tooltips.css">
   <link rel="stylesheet" href="/CSS/utilities.css">
@@ -51,145 +52,145 @@
 
 <body>
   <header>
-    <label for="menu-toggle" id="menu-btn" aria-label="Abrir menú">☰ Menú</label>
+    <label for="menu-toggle" id="menu-btn" aria-label="Open menu">☰ Menu</label>
     <input type="checkbox" id="menu-toggle" aria-controls="menu-lateral">
-    <h1>Amajoh TPV</h1>
+    <h1>Amajoh POS</h1>
   </header>
   <main>
-    <aside id="menu-lateral" class="hidden" aria-label="Menú lateral">
-      <a href="#inventario" id="enlace-inventario" aria-current="page">Inventario</a>
-      <a href="#agregarPlato" id="enlace-agregarPlato" aria-current="page">Agregar Plato</a>
-      <a href="#caja" id="enlace-caja" aria-current="page">Caja</a>
-      <a href="#reservation" id="enlace-reservation" aria-current="page">Reservas</a>
-      <a href="#list" id="enlace-list" aria-current="page">Lista de Tareas</a>
-      <a href="#unavailablePlates" id="enlace-unavailablePlates" aria-current="page">Platos no disponibles</a>
-      <a href="#Losses" id="enlace-Losses" aria-current="page">Mermas</a>
-      <a href="#clientes" id="enlace-clientes" aria-current="page">Clientes</a>
-      <a href="#orderPaid" id="enlace-order" aria-current="page">Pedidos Cobrados</a>
-      <a href="#gestionPersonal" id="enlace-gestionPersonal" aria-current="page">Gestión del Personal</a>
-      <a href="#estadisticasVentas" id="enlace-estadisticasVentas" aria-current="page">Estadísticas de Ventas</a>
-      <a href="#reportesFinancieros" id="enlace-reportesFinancieros" aria-current="page">Reportes Financieros</a>
-      <a href="#ayuda" id="enlace-ayuda" aria-current="page">Ayuda</a>
+    <aside id="menu-lateral" class="hidden" aria-label="Side menu">
+      <a href="#inventario" id="enlace-inventario" aria-current="page">Inventory</a>
+      <a href="#agregarPlato" id="enlace-agregarPlato" aria-current="page">Add Dish</a>
+      <a href="#caja" id="enlace-caja" aria-current="page">Cashier</a>
+      <a href="#reservation" id="enlace-reservation" aria-current="page">Reservations</a>
+      <a href="#list" id="enlace-list" aria-current="page">To-Do List</a>
+      <a href="#unavailablePlates" id="enlace-unavailablePlates" aria-current="page">Unavailable Dishes</a>
+      <a href="#Losses" id="enlace-Losses" aria-current="page">Waste</a>
+      <a href="#clientes" id="enlace-clientes" aria-current="page">Customers</a>
+      <a href="#orderPaid" id="enlace-order" aria-current="page">Paid Orders</a>
+      <a href="#gestionPersonal" id="enlace-gestionPersonal" aria-current="page">Staff Management</a>
+      <a href="#estadisticasVentas" id="enlace-estadisticasVentas" aria-current="page">Sales Statistics</a>
+      <a href="#reportesFinancieros" id="enlace-reportesFinancieros" aria-current="page">Financial Reports</a>
+      <a href="#ayuda" id="enlace-ayuda" aria-current="page">Help</a>
     </aside>
     <article>
-      <h2 class="visually-hidden">seciones TPV</h2>
+      <h2 class="visually-hidden">POS sections</h2>
       <section id="inventario">
-        <h2 class="visually-hidden">inventario</h2>
+        <h2 class="visually-hidden">inventory</h2>
         <form data-submit="productSubmit" name="inventario" method="post" accept-charset="UTF-8" autocomplete="off">
           <fieldset id="ingredientsProducts">
-            <legend><strong>Ingresar datos de inventarios</strong></legend>
+            <legend><strong>Enter inventory data</strong></legend>
             <label for="producto">
               <input type="text" id="producto" name="producto" value required>
-              <span>Producto:</span>
+              <span>Product:</span>
             </label>
             <label for="cantidad">
               <input type="number" id="cantidad" name="cantidad" required>
-              <span>Cantidad:</span>
+              <span>Quantity:</span>
             </label>
             <label for="precio">
               <input type="number" id="precio" name="precio" step="0.01" required>
-              <span>Precio:</span>
+              <span>Price:</span>
             </label>
             <label for="maxAmount">
               <input type="number" id="maxAmount" name="maxAmount" required>
-              <span>Cantidad minima:</span>
+              <span>Minimum Quantity:</span>
             </label>
             <label for="categoria">
-              <select id="categoria" name="categoria" title="seleccione categoria" required>
+              <select id="categoria" name="categoria" title="select category" required>
                 <option value="" disabled selected></option>
-                <option value="freshProducts">Productos frescos</option>
-                <option value="dryProducts">Productos secos</option>
-                <option value="preparedFood">Elaborados</option>
-                <option value="alcoholicBeverages">Bebidas alcoholicas</option>
-                <option value="cleaningProducts">Productos de limpieza</option>
+                <option value="freshProducts">Fresh products</option>
+                <option value="dryProducts">Dry products</option>
+                <option value="preparedFood">Prepared food</option>
+                <option value="alcoholicBeverages">Alcoholic beverages</option>
+                <option value="cleaningProducts">Cleaning products</option>
               </select>
-              <span>elija categoria:</span>
+              <span>Choose category:</span>
             </label>
             <label for="proveedor">
               <input type="text" id="proveedor" name="proveedor" value required>
-              <span>Proveedor:</span>
+              <span>Supplier:</span>
             </label>
-            <button type="button" aria-label="Añadir Ingredientes">Añadir Ingredientes</button>
-            <button type="submit">Agregar Producto</button>
+            <button type="button" aria-label="Add Ingredients">Add Ingredients</button>
+            <button type="submit">Add Product</button>
           </fieldset>
         </form>
         <search>
-          <label for="product">Producto:</label>
-          <input type="search" id="product" name="product" placeholder="Buscar producto...">
+          <label for="product">Product:</label>
+          <input type="search" id="product" name="product" placeholder="Search product...">
         </search>
-        <table id="tablaInventario" aria-label="Tabla de inventario de productos">
+        <table id="tablaInventario" aria-label="Product inventory table">
           <caption>
-            <strong>hoja de inventario</strong>
+            <strong>Inventory Sheet</strong>
           </caption>
           <thead>
             <tr>
-              <th>Producto</th>
-              <th>Cantidad</th>
-              <th>Precio</th>
-              <th>Cantidad Minima</th>
-              <th>Categoría</th>
-              <th>Proveedor</th>
-              <th>Acciones</th>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Minimum Quantity</th>
+              <th>Category</th>
+              <th>Supplier</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody></tbody>
         </table>
       </section>
       <section id="agregarPlato">
-        <h2 class="visually-hidden">agregar plato</h2>
+        <h2 class="visually-hidden">add dish</h2>
         <form data-submit="plateMenu" name="menu" method="post" enctype="application/x-www-form-urlencoded"
           accept-charset="UTF-8" autocomplete="off">
           <fieldset id="ingredientInputs">
-            <legend><strong>Ingresar datos del menu</strong></legend>
+            <legend><strong>Enter menu data</strong></legend>
             <label for="imgUrl"><input type="file" id="imgUrl" name="imgUrl" required
                 accept=".webp, .jpg, .jpeg"></label>
             <label for="title">
               <input type="text" id="title" name="title" required>
-              <span>Titulo:</span>
+              <span>Title:</span>
             </label>
             <label for="price">
               <input type="number" id="price" name="price" step="0.01" required>
-              <span>Precio:</span>
+              <span>Price:</span>
             </label>
             <label for="category">
-              <select id="category" name="category" title="seleccione categoria" required>
+              <select id="category" name="category" title="select category" required>
                 <option value="" disabled selected></option>
                 <option value="Arepas">Arepas</option>
                 <option value="Sandwich">Sandwich</option>
-                <option value="Entrantes">Entrantes</option>
-                <option value="Postres">Postres</option>
-                <option value="Platos Especiales">Platos Especiales</option>
-                <option value="Platos Combinados">Platos Combinados</option>
-                <option value="Ensaladas">Ensaladas</option>
+                <option value="Entrantes">Starters</option>
+                <option value="Postres">Desserts</option>
+                <option value="Platos Especiales">Specials</option>
+                <option value="Platos Combinados">Combo Plates</option>
+                <option value="Ensaladas">Salads</option>
                 <option value="Extras">Extras</option>
-                <option value="Bocadillos">Bocadillos</option>
-                <option value="Hambuguesas">Hambuguesas</option>
+                <option value="Bocadillos">Sandwiches</option>
+                <option value="Hambuguesas">Hamburgers</option>
                 <option value="Cocktails">Cocktails</option>
-                <option value="Refrescos">Refrescos</option>
-                <option value="Batidos Tropicales">Batidos Tropicales</option>
-                <option value="Cafe">Cafe</option>
+                <option value="Refrescos">Soft Drinks</option>
+                <option value="Batidos Tropicales">Tropical Shakes</option>
+                <option value="Cafe">Coffee</option>
               </select>
-              <span>Categoria:</span>
+              <span>Category:</span>
             </label>
-            <button type="button">Añadir Ingredientes</button>
-            <button type="submit" class="plato">Agregar Plato</button>
+            <button type="button">Add Ingredients</button>
+            <button type="submit" class="plato">Add Dish</button>
           </fieldset>
         </form>
       </section>
       <section id="caja" class="caja">
-        <h2 class="visually-hidden">caja</h2>
+        <h2 class="visually-hidden">cashier</h2>
         <search>
-          <label for="plate">Producto:</label>
-          <input type="search" id="plate" name="plate" placeholder="Buscar plato...">
+          <label for="plate">Dish:</label>
+          <input type="search" id="plate" name="plate" placeholder="Search dish...">
         </search>
-        <button type="button" id="sectionAvailablePlates">Activar</button>
+        <button type="button" id="sectionAvailablePlates">Activate</button>
         <article id="menu-comandas">
-          <h2 class="visually-hidden">menu y pedidos</h2>
+          <h2 class="visually-hidden">menu and orders</h2>
           <article id="platos-lista">
             <h2 class="visually-hidden">menu</h2>
           </article>
           <div id="pedidos"></div>
-          <!--semanticamente es mejor un article que este div pero no se comporta igual-->
+          <!-- Semantically an <article> would be better than this <div>, but it behaves differently -->
         </article>
       </section>
       <section id="reservation">
@@ -197,22 +198,22 @@
         <form data-submit="reservations" name="reservation" method="post" enctype="application/x-www-form-urlencoded"
           accept-charset="UTF-8" autocomplete="off">
           <fieldset>
-            <legend><strong>hacer reserva</strong></legend>
-            <label for="reservationDate">Elija fecha: </label>
+            <legend><strong>Make a reservation</strong></legend>
+            <label for="reservationDate">Choose date: </label>
             <input type="date" id="reservationDate" name="reservationDate" required>
-            <label for="reservationTime">Elija hora: </label>
+            <label for="reservationTime">Choose time: </label>
             <input type="time" id="reservationTime" name="reservationTime" required>
             <label for="name">
               <input type="text" id="name" name="name" required>
-              <span>Nombre: </span>
+              <span>Name: </span>
             </label>
             <label for="telephon">
               <input type="tel" id="telephon" name="telephon" required pattern="[0-9]{9,15}"
-                title="Debe contener entre 9 y 15 dígitos numéricos." maxlength="15">
+                title="Must contain between 9 and 15 numeric digits." maxlength="15">
               <span>625 879 645</span></label>
             <label for="table">
               <input type="text" id="table" name="table" required>
-              <span>Mesa para: </span>
+              <span>Table for: </span>
             </label>
             <label for="email">
               <input type="email" id="email" name="email" required autocomplete="email">
@@ -221,23 +222,23 @@
             <label for="password">
               <input type="password" id="password" class="password" placeholder="*********"
                 pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
-                title="La contraseña debe contener números,letras mayúsculas y minúsculas, y tener al menos 8 caracteres."
+                title="The password must contain numbers, uppercase and lowercase letters, and be at least 8 characters long."
                 name="password" required autocomplete="new-password">
-              <span>Contraseña:</span>
+              <span>Password:</span>
             </label>
             <label for="confirmPasswordReservation">
               <input type="password" id="confirmPasswordReservation" class="password" placeholder="*********"
                 pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
-                title="La contraseña debe contener números,letras mayúsculas y minúsculas, y tener al menos 8 caracteres."
+                title="The password must contain numbers, uppercase and lowercase letters, and be at least 8 characters long."
                 required autocomplete="new-password">
-              <span>Confirmar contraseña:</span>
+              <span>Confirm Password:</span>
             </label>
             <label for="creditCard">
               <input type="text" id="creditCard" name="creditCard" inputmode="numeric" autocomplete="cc-number"
                 pattern="[0-9\s]{13,19}" required>
               <span>1234 5678 9012 3456</span>
             </label>
-            <label for="expiryDate">Fecha de vencimiento:</label>
+            <label for="expiryDate">Expiration Date:</label>
             <input type="date" id="expiryDate" name="expiryDate" required>
             <label for="cvv"><input type="text" id="cvv" autocomplete="cc-csc" name="cvv" inputmode="numeric"
                 pattern="\d{3,4}" required>
@@ -245,102 +246,102 @@
             </label>
             <label for="allergies">
               <input type="text" id="allergies" name="allergies" value required>
-              <span>¿Alergias?</span>
+              <span>Allergies?</span>
             </label>
-            <button type="submit">Reservar</button>
+            <button type="submit">Book</button>
           </fieldset>
         </form>
         <search>
-          <label for="searchReservation">Reserva:</label>
-          <input type="search" id="searchReservation" name="searchReservation" placeholder="Buscar reserva...">
+          <label for="searchReservation">Reservation:</label>
+          <input type="search" id="searchReservation" name="searchReservation" placeholder="Search reservation...">
         </search>
-        <table id="tableReservation" aria-label="Tabla de reservas">
+        <table id="tableReservation" aria-label="Reservations table">
           <caption>
-            <strong>hoja de Reservas</strong>
+            <strong>Reservations Sheet</strong>
           </caption>
           <thead>
             <tr>
-              <th>Nombre</th>
-              <th>Mesa Para</th>
-              <th>Telefono</th>
-              <th>Fecha</th>
-              <th>Hora</th>
-              <th>Alergias</th>
-              <th>Acciones</th>
+              <th>Name</th>
+              <th>Table For</th>
+              <th>Phone</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Allergies</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody></tbody>
         </table>
       </section>
       <section id="list">
-        <h2 class="visually-hidden">tareas</h2>
+        <h2 class="visually-hidden">tasks</h2>
         <article id="toDoList">
           <h2 class="visually-hidden">toDoList</h2>
-          <!--igual que en caja mejor es un article que un div-->
+          <!-- As in Cashier, an <article> would be better than a <div> -->
           <div id="shoppingList"></div>
           <div id="mealPrepList"></div>
         </article>
       </section>
       <section id="unavailablePlates">
         <h2 class="visually-hidden">toDoList</h2>
-        <button type="button" id="sectionUnavailablePlates">habilitar plato</button>
+        <button type="button" id="sectionUnavailablePlates">Enable dish</button>
         <div id="unavailables"></div>
       </section>
       <section id="Losses">
-        <h2 class="visually-hidden">perdidas</h2>
+        <h2 class="visually-hidden">losses</h2>
         <form data-submit="wastageSubmit" name="waste" method="post" accept-charset="UTF-8" autocomplete="on">
           <fieldset>
-            <legend><strong>Ingresar datos de la merma</strong></legend>
+            <legend><strong>Enter waste data</strong></legend>
             <search>
               <label for="wastageProduct">
                 <input type="text" id="wastageProduct" name="wastageProduct" value required>
-                <span>Producto:</span>
+                <span>Product:</span>
               </label>
             </search>
             <label for="wastage">
               <input type="number" id="wastage" name="wastage" required>
-              <span>Cantidad:</span>
+              <span>Quantity:</span>
             </label>
             <label for="reason">
-              <select id="reason" name="reason" title="elija motivo de merma" required>
+              <select id="reason" name="reason" title="choose waste reason" required>
                 <option value="" disabled selected></option>
-                <option value="Expired">Caducado</option>
-                <option value="Damaged">Estropeado</option>
-                <option value="Rejected">Rechazado</option>
-                <option value="Unsold">No se vendio</option>
+                <option value="Expired">Expired</option>
+                <option value="Damaged">Damaged</option>
+                <option value="Rejected">Rejected</option>
+                <option value="Unsold">Unsold</option>
               </select>
-              <span>Motivo:</span>
+              <span>Reason:</span>
             </label>
-            <button type="submit">Enviar merma</button>
+            <button type="submit">Submit Waste</button>
           </fieldset>
         </form>
-        <table id="tablaMerma" aria-label="Tabla de mermas">
+        <table id="tablaMerma" aria-label="Waste table">
           <caption>
-            <strong>hoja de mermas</strong>
+            <strong>Waste Sheet</strong>
           </caption>
           <thead>
             <tr>
-              <th>Producto</th>
-              <th>Cantidad</th>
-              <th>Motivo</th>
-              <th>Acciones</th>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Reason</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody></tbody>
         </table>
       </section>
       <section id="orderPaid">
-        <h2 class="visually-hidden">comandas</h2>
+        <h2 class="visually-hidden">orders</h2>
       </section>
       <section id="clientes">
-        <h2 class="visually-hidden">clientes</h2>
+        <h2 class="visually-hidden">customers</h2>
         <form action="/" name="configuracionRestaurante" method="post" enctype="application/x-www-form-urlencoded"
           accept-charset="UTF-8" autocomplete="off">
           <fieldset>
-            <legend><strong>Enviar mensajes</strong></legend>
+            <legend><strong>Send Messages</strong></legend>
             <label for="nombreContacto">
               <input type="text" id="nombreContacto" name="nombreContacto" required autocomplete="name">
-              <span>Nombre:</span>
+              <span>Name:</span>
             </label>
             <search>
               <label for="emailContacto">
@@ -350,48 +351,48 @@
             </search>
             <label for="mensajeContacto">
               <textarea id="mensajeContacto" name="mensajeContacto" rows="4" maxlength="100" required></textarea>
-              <span>Mensaje:</span>
+              <span>Message:</span>
             </label>
-            <button type="button">Enviar Mensaje</button>
+            <button type="button">Send Message</button>
           </fieldset>
         </form>
-        <table id="tablaClientes" aria-label="Tabla info clientes">
+        <table id="tablaClientes" aria-label="Customer info table">
           <caption>
-            <strong>hoja de clientes</strong>
+            <strong>Customer Sheet</strong>
           </caption>
           <thead>
             <tr>
-              <th>Nombre</th>
+              <th>Name</th>
               <th>Email</th>
-              <th>Telefono</th>
-              <th>Acciones</th>
+              <th>Phone</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody></tbody>
         </table>
       </section>
       <section id="gestionPersonal">
-        <h2 class="visually-hidden">gestion personal</h2>
+        <h2 class="visually-hidden">staff management</h2>
         <form data-submit="employeeSubmit" name="register" method="post" enctype="application/x-www-form-urlencoded"
           accept-charset="UTF-8" autocomplete="off">
           <fieldset id="employeeInputs">
-            <legend><strong>Gestión del Personal</strong></legend>
+            <legend><strong>Staff Management</strong></legend>
             <label for="nombreEmpleado">
               <input type="text" id="nombreEmpleado" name="name" value required autocomplete="name">
-              <span>Nombre empleado:</span>
+              <span>Employee name:</span>
             </label>
             <label for="puesto">
               <input type="text" id="puesto" name="job" value required autocomplete="organization-title">
-              <span>Puesto:</span>
+              <span>Position:</span>
             </label>
             <label for="tel">
               <input type="tel" id="tel" name="telephon" required pattern="[0-9]{9,15}"
-                title="Debe contener entre 9 y 15 dígitos numéricos." maxlength="15">
+                title="Must contain between 9 and 15 numeric digits." maxlength="15">
               <span>675 543 618</span>
             </label>
             <label for="salary">
               <input type="number" id="salary" name="salary" required>
-              <span>salario:</span>
+              <span>Salary:</span>
             </label>
             <label for="correo">
               <input type="email" id="correo" name="email" required autocomplete="email">
@@ -399,73 +400,73 @@
             </label>
             <label for="contraseña">
               <input type="password" id="contraseña" name="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
-                title="La contraseña debe contener al menos un número, una letra mayúscula y una letra minúscula, y tener al menos 8 caracteres."
+                title="The password must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 characters long."
                 required autocomplete="new-password">
-              <span>Contraseña:</span></label>
+              <span>Password:</span></label>
             <label for="confirmPassword"><input type="password" id="confirmPassword"
                 pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
-                title="La contraseña debe contener al menos un número, una letra mayúscula y una letra minúscula, y tener al menos 8 caracteres."
+                title="The password must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 characters long."
                 required autocomplete="new-password">
-              <span>Confirmar Contraseña:</span>
+              <span>Confirm Password:</span>
             </label>
-            <button type="submit">Agregar Empleado</button>
+            <button type="submit">Add Employee</button>
           </fieldset>
         </form>
-        <table id="tablaEmpleados" aria-label="Tabla info empleados">
+        <table id="tablaEmpleados" aria-label="Employee info table">
           <caption>
-            <strong>Lista De Empleados</strong>
+            <strong>Employee List</strong>
           </caption>
           <thead>
             <tr>
-              <th>Nombre</th>
-              <th>Puesto</th>
-              <th>Telefono</th>
-              <th>Salario</th>
-              <th>Acciones</th>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Phone</th>
+              <th>Salary</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody></tbody>
         </table>
       </section>
       <section id="estadisticasVentas">
-        <h2 class="visually-hidden">estadisticas</h2>
-        <select id="selectedPeriod" title="filtar por dia,mes y año">
-          <option value="day">Día</option>
-          <option value="month">Mes</option>
-          <option value="year">Año</option>
+        <h2 class="visually-hidden">statistics</h2>
+        <select id="selectedPeriod" title="filter by day, month and year">
+          <option value="day">Day</option>
+          <option value="month">Month</option>
+          <option value="year">Year</option>
         </select>
         <canvas id="graficoVentas"></canvas>
       </section>
       <section id="reportesFinancieros">
-        <h2 class="visually-hidden">reportes financieros</h2>
-        <table id="salesByMonth" aria-label="Tabla de reportes financieros">
+        <h2 class="visually-hidden">financial reports</h2>
+        <table id="salesByMonth" aria-label="Financial reports table">
           <caption>
-            <p>NOMBRE: AMAJOH</p>
-            <p>CIF: J09702291</p>
-            <strong>VENTAS DEL MES</strong>
+            <p>NAME: AMAJOH</p>
+            <p>Tax ID: J09702291</p>
+            <strong>MONTHLY SALES</strong>
           </caption>
           <thead>
             <tr>
-              <th>Dia</th>
-              <th>Tarjeta</th>
-              <th>Efectivo</th>
-              <th>Maquinas Recreativas</th>
+              <th>Day</th>
+              <th>Card</th>
+              <th>Cash</th>
+              <th>Arcade Machines</th>
               <th>Glovo</th>
-              <th>Tienda Online</th>
-              <th>Total TPV</th>
+              <th>Online Store</th>
+              <th>POS Total</th>
             </tr>
           </thead>
           <tbody></tbody>
         </table>
-        <button type="button" id="generatePDF">Generar Reporte</button>
+        <button type="button" id="generatePDF">Generate Report</button>
       </section>
       <section id="ayuda">
-        <h2>Ayuda</h2>
-        <p>Aquí puedes encontrar recursos de ayuda y documentación.</p>
-        <button>Ver Documentación</button>
+        <h2>Help</h2>
+        <p>Here you can find help resources and documentation.</p>
+        <button>View Documentation</button>
         <ul>
-          <li><a href="faq.html">Preguntas Frecuentes</a></li>
-          <li><a href="tutorial.html">Tutorial de Uso</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="tutorial.html">User Tutorial</a></li>
         </ul>
       </section>
     </article>
@@ -479,7 +480,7 @@
             title="Facebook AMAJOH" aria-label="Facebook AMAJOH">
             <img
               src="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_webp,q_auto:eco/v1714231224/menu/facebook_zmmjop.webp"
-              alt="Ir al Facebook de AMAJOH" loading="eager">
+              alt="Go to AMAJOH Facebook" loading="eager">
           </a>
         </li>
         <li>
@@ -487,7 +488,7 @@
             title="Instagram AMAJOH" aria-label="Instagram AMAJOH">
             <img
               src="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_webp,q_auto:eco/v1714231230/menu/instagram_kyk1rs.webp"
-              alt="Ir al Instagram de AMAJOH" loading="eager">
+              alt="Go to AMAJOH Instagram" loading="eager">
           </a>
         </li>
       </ul>
@@ -518,10 +519,11 @@
   <script type="module" src="/JavaScript/events/getHandlers.js"></script>
   <script type="module" src="/JavaScript/events/postHandlers.js"></script>
   <script type="module" src="/JavaScript/events/putHandlers.js"></script>
-  <script type="module" src="/JavaScript/mostrarDocumentacion.js"></script>
-  <script type="module" src="/JavaScript/enviarMensajes.js"></script>
+  <script type="module" src="/JavaScript/showDocumentation.js"></script>
+  <script type="module" src="/JavaScript/sendMessages.js"></script>
   <script type="module" src="/JavaScript/helpers/watermark.js"></script>
   <script type="module" src="/JavaScript/helpers/inputFile.js"></script>
+  <script type="module" src="/JavaScript/helpers/delegateEvents.js"></script>
 </body>
 
 </html>

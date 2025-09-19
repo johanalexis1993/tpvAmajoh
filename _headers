@@ -1,5 +1,13 @@
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://res.cloudinary.com data:; connect-src 'self' http://localhost:3000 https://tpv-amajoh.netlify.app ws://localhost:5173; font-src 'self'; frame-ancestors 'none'; form-action 'self'; object-src 'none'; base-uri 'self'
-  X-Frame-Options: DENY
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Content-Security-Policy: default-src 'self'; \
+    base-uri 'self'; \
+    object-src 'none'; \
+    frame-ancestors 'none'; \
+    img-src 'self' https://res.cloudinary.com data: blob:; \
+    script-src 'self'; \
+    style-src 'self' 'unsafe-inline'; \
+    connect-src 'self' https://servidor-tpv.vercel.app http://localhost:3000; \
+    font-src 'self' data:; \
+    media-src 'self' data: blob:; \
+    upgrade-insecure-requests;
+

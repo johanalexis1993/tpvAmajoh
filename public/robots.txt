@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /tpv.html
+Disallow: /pos.html
 Allow: /
-Sitemap: http://localhost:4173/sitemap.xml
+Sitemap: https://tpv-amajoh.netlify.app/sitemap.xml

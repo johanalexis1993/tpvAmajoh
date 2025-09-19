@@ -3,30 +3,29 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Registro – AMAJOH TPV</title>
+  <title>Sign Up – AMAJOH POS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description"
-    content="Regístrate en AMAJOH TPV para gestionar productos, ventas y estadísticas de tu negocio.">
+  <meta name="description" content="Sign up on AMAJOH POS to manage products, sales, and business statistics.">
   <meta name="author" content="Johan Alexis">
   <meta name="robots" content="index, follow, noarchive">
   <link rel="canonical" href="https://tpv-amajoh.netlify.app/register/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Registro – AMAJOH TPV">
-  <meta property="og:description" content="Crea tu cuenta y empieza a gestionar tu negocio fácilmente.">
+  <meta property="og:title" content="Sign Up – AMAJOH POS">
+  <meta property="og:description" content="Create your account and start managing your business easily.">
   <meta property="og:url" content="https://tpv-amajoh.netlify.app/register/">
   <meta property="og:image"
     content="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_auto,q_auto:eco/v1714231224/menu/amajoh_yeqekh.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Logotipo de AMAJOH">
-  <meta property="og:site_name" content="AMAJOH TPV">
-  <meta property="og:locale" content="es_ES">
+  <meta property="og:image:alt" content="AMAJOH logo">
+  <meta property="og:site_name" content="AMAJOH POS">
+  <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Registro – AMAJOH TPV">
-  <meta name="twitter:description" content="Crea tu cuenta y empieza a gestionar tu negocio fácilmente.">
+  <meta name="twitter:title" content="Sign Up – AMAJOH POS">
+  <meta name="twitter:description" content="Create your account and start managing your business easily.">
   <meta name="twitter:image"
     content="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_auto,q_auto:eco/v1714231224/menu/amajoh_yeqekh.webp">
-  <meta name="twitter:image:alt" content="Logotipo de AMAJOH">
+  <meta name="twitter:image:alt" content="AMAJOH logo">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0b0b0b" media="(prefers-color-scheme: dark)">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -40,6 +39,7 @@
   <link rel="stylesheet" href="/CSS/layout/header-footer.css">
   <link rel="stylesheet" href="/CSS/components/forms.css">
   <link rel="stylesheet" href="/CSS/components/buttons.css">
+  <link rel="stylesheet" href="/CSS/components/toast.css">
   <link rel="stylesheet" href="/CSS/components/media-tooltips.css">
   <link rel="stylesheet" href="/CSS/utilities.css">
   <link rel="stylesheet" href="/CSS/main.css">
@@ -53,61 +53,61 @@
     <form data-submit="register" action="/api/v1/users/register" name="register" method="post"
       enctype="application/x-www-form-urlencoded" accept-charset="UTF-8" autocomplete="off">
       <fieldset>
-        <legend><strong>Crear una cuenta</strong></legend>
+        <legend><strong>Create an account</strong></legend>
         <label for="name">
           <input type="text" id="name" name="name" required>
-          <span>Nombre:</span>
+          <span>Name:</span>
         </label>
         <label for="email">
           <input type="email" id="email" name="email" required autocomplete="email">
-          <span>Correo electrónico:</span>
+          <span>Email:</span>
         </label>
         <label for="password"><input type="password" id="password" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
-            title="La contraseña debe contener al menos un número, una letra mayúscula y una letra minúscula, y tener al menos 8 caracteres."
+            title="The password must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 characters long."
             name="password" required autocomplete="new-password">
-          <span>Contraseña:</span>
+          <span>Password:</span>
         </label>
-        <label for="password"><input type="password" id="confirmarPassword"
+        <label for="password"><input type="password" id="confirmPassword"
             pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
-            title="La contraseña debe contener al menos un número, una letra mayúscula y una letra minúscula, y tener al menos 8 caracteres."
+            title="The password must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 characters long."
             required autocomplete="new-password">
-          <span>Confirmar Contraseña:</span>
-        </label><!--antes utilizava confirmarPassword y funcionava sino mirar codigo y corregirlo JOHAN-->
+          <span>Confirm Password:</span>
+        </label>
         <label for="telephon">
           <input type="tel" id="telephon" name="telephon" required pattern="[0-9]{9,15}"
-            title="Debe contener entre 9 y 15 dígitos numéricos." maxlength="15">
-          <span>Telefono:</span>
+            title="Must contain between 9 and 15 numeric digits." maxlength="15">
+          <span>Phone:</span>
         </label>
         <label for="creditCard"><input type="text" id="creditCard" name="creditCard" inputmode="numeric"
             pattern="[0-9\s]{13,19}" required>
           <span>1234 5678 9012 3456</span>
         </label>
-        <label for="expiryDate">Fecha de vencimiento:</label>
+        <label for="expiryDate">Expiration Date:</label>
         <input type="date" id="expiryDate" name="expiryDate" required>
         <label for="cvv"> <input type="text" id="cvv" name="cvv" inputmode="numeric" pattern="\d{3,4}" required>
           <span>CVV:</span>
         </label>
         <label for="cifOrAutonomo">
           <input type="text" id="cifOrAutonomo" name="cifOrAutonomo" required>
-          <span>CIF o Nº autónomo:</span>
+          <span>Tax ID:</span>
         </label>
         <label for="restaurantName">
           <input type="text" id="restaurantName" name="restaurantName" required>
-          <span>Nombre negocio:</span>
+          <span>Business Name:</span>
         </label>
         <label for="address">
           <input type="text" id="address" name="address" value required>
-          <span>Dirección:</span>
+          <span>Address:</span>
         </label>
         <label for="whatTypeOf">
           <input type="text" id="whatTypeOf" name="whatTypeOf" value required>
-          <span>Tipo de Cocina:</span>
+          <span>Type of Cuisine:</span>
         </label>
-        <button type="submit">Registrarse</button>
+        <button type="submit">Sign Up</button>
       </fieldset>
     </form>
     <p>
-      ¿Ya tienes una cuenta? <a href="/index.html">Inicia sesión aquí</a>.
+      Already have an account? <a href="/index.html">Sign in here</a>.
     </p>
   </main>
   <footer>
@@ -119,7 +119,7 @@
             title="Facebook AMAJOH" aria-label="Facebook AMAJOH">
             <img
               src="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_webp,q_auto:eco/v1714231224/menu/facebook_zmmjop.webp"
-              alt="Ir al Facebook de AMAJOH" loading="eager">
+              alt="Go to AMAJOH Facebook" loading="eager">
           </a>
         </li>
         <li>
@@ -127,7 +127,7 @@
             title="Instagram AMAJOH" aria-label="Instagram AMAJOH">
             <img
               src="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_webp,q_auto:eco/v1714231230/menu/instagram_kyk1rs.webp"
-              alt="Ir al Instagram de AMAJOH" loading="eager">
+              alt="Go to AMAJOH Instagram" loading="eager">
           </a>
         </li>
       </ul>

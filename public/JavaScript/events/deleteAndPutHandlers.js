@@ -28,7 +28,7 @@ const agregarEventoTabla = (tablaId, url, columnas) => {
   })
 }
 requestIdleCallback(() => {
-  agregarEventoTabla('tableReservation', 'reservation/', {
+  agregarEventoTabla('tableReservation', 'reservation', {
     id: 5,
     editables: [
       { nombre: 'name', indice: 0 },
@@ -38,7 +38,7 @@ requestIdleCallback(() => {
       { nombre: 'reservationTime', indice: 4 }
     ]
   })
-  agregarEventoTabla('tablaInventario', 'productos/', {
+  agregarEventoTabla('tablaInventario', 'productos', {
     id: 6,
     editables: [
       { nombre: 'producto', indice: 0 },
@@ -49,7 +49,7 @@ requestIdleCallback(() => {
       { nombre: 'proveedor', indice: 5 }
     ]
   })
-  agregarEventoTabla('tablaEmpleados', 'users/', {
+  agregarEventoTabla('tablaEmpleados', 'users', {
     id: 4,
     editables: [
       { nombre: 'name', indice: 0 },
@@ -58,7 +58,7 @@ requestIdleCallback(() => {
       { nombre: 'salary', indice: 3 }
     ]
   })
-  agregarEventoTabla('tablaClientes', 'users/', {
+  agregarEventoTabla('tablaClientes', 'users', {
     id: 3,
     editables: [
       { nombre: 'name', indice: 0 },
@@ -66,7 +66,7 @@ requestIdleCallback(() => {
       { nombre: 'telephon', indice: 2 }
     ]
   })
-  agregarEventoTabla('tablaMerma', 'wasteControl/', {
+  agregarEventoTabla('tablaMerma', 'wasteControl', {
     id: 3,
     editables: [
       { nombre: 'wastageProduct', indice: 0 },

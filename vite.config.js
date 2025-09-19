@@ -9,7 +9,7 @@ export default defineConfig({
       input: {
         index: 'public/index.html',
         register: 'public/register.html',
-        tpv: 'public/tpv.html'
+        tpv: 'public/pos.html'
       }
     }
   },

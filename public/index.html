@@ -3,30 +3,30 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Iniciar sesión – AMAJOH TPV</title>
+  <title>Sign In – AMAJOH POS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description"
-    content="Solución TPV económica y completa para emprendedores y pequeñas empresas de cualquier sector.">
+    content="Affordable and complete POS solution for entrepreneurs and small businesses in any sector.">
   <meta name="author" content="Johan Alexis">
   <meta name="robots" content="index, follow, noarchive">
   <link rel="canonical" href="https://tpv-amajoh.netlify.app/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Iniciar sesión – AMAJOH TPV">
-  <meta property="og:description" content="Accede para gestionar productos, ventas y estadísticas.">
+  <meta property="og:title" content="Sign In – AMAJOH POS">
+  <meta property="og:description" content="Access to manage products, sales, and statistics.">
   <meta property="og:url" content="https://tpv-amajoh.netlify.app/">
   <meta property="og:image"
     content="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_auto,q_auto:eco/v1714231224/menu/amajoh_yeqekh.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Logotipo de AMAJOH">
-  <meta property="og:site_name" content="AMAJOH TPV">
-  <meta property="og:locale" content="es_ES">
+  <meta property="og:image:alt" content="AMAJOH logo">
+  <meta property="og:site_name" content="AMAJOH POS">
+  <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Iniciar sesión – AMAJOH TPV">
-  <meta name="twitter:description" content="Accede para gestionar productos, ventas y estadísticas.">
+  <meta name="twitter:title" content="Sign In – AMAJOH POS">
+  <meta name="twitter:description" content="Access to manage products, sales, and statistics.">
   <meta name="twitter:image"
     content="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_auto,q_auto:eco/v1714231224/menu/amajoh_yeqekh.webp">
-  <meta name="twitter:image:alt" content="Logotipo de AMAJOH">
+  <meta name="twitter:image:alt" content="AMAJOH logo">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0b0b0b" media="(prefers-color-scheme: dark)">
   <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -40,6 +40,7 @@
   <link rel="stylesheet" href="/CSS/layout/header-footer.css">
   <link rel="stylesheet" href="/CSS/components/forms.css">
   <link rel="stylesheet" href="/CSS/components/buttons.css">
+  <link rel="stylesheet" href="/CSS/components/toast.css">
   <link rel="stylesheet" href="/CSS/components/media-tooltips.css">
   <link rel="stylesheet" href="/CSS/utilities.css">
   <link rel="stylesheet" href="/CSS/main.css">
@@ -47,27 +48,27 @@
 
 <body>
   <header>
-    <h1>Iniciar sesión</h1>
+    <h1>Sign In</h1>
   </header>
   <main id="login">
     <form data-submit="login" name="login" method="post" enctype="application/x-www-form-urlencoded"
       accept-charset="UTF-8" autocomplete="on">
       <fieldset>
-        <legend><strong>Iniciar Sesión</strong></legend>
+        <legend><strong>Sign In</strong></legend>
         <label for="email"><input type="email" id="email" name="email" required autocomplete="username">
-          <span>Correo electrónico:</span>
+          <span>Email:</span>
         </label>
         <label for="password"><input type="password" id="password" name="password"
             pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
-            title="La contraseña debe contener al menos un número, una letra mayúscula y una letra minúscula, y tener al menos 8 caracteres."
-            required autocomplete="current-password"><span>Contraseña:</span>
+            title="The password must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 characters long."
+            required autocomplete="current-password"><span>Password:</span>
         </label>
-        <button type="submit">Iniciar sesión</button>
+        <button type="submit">Sign In</button>
       </fieldset>
     </form>
     <p>
-      ¿No tienes una cuenta?
-      <a href="/register.html">Regístrate aquí</a>.
+      Don’t have an account?
+      <a href="/register.html">Sign up here</a>.
     </p>
   </main>
   <footer>
@@ -79,7 +80,7 @@
             title="Facebook AMAJOH" aria-label="Facebook AMAJOH">
             <img
               src="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_webp,q_auto:eco/v1714231224/menu/facebook_zmmjop.webp"
-              alt="Ir al Facebook de AMAJOH" loading="eager">
+              alt="Go to AMAJOH Facebook" loading="eager">
           </a>
         </li>
         <li>
@@ -87,7 +88,7 @@
             title="Instagram AMAJOH" aria-label="Instagram AMAJOH">
             <img
               src="https://res.cloudinary.com/dx0fsy5fw/image/upload/f_webp,q_auto:eco/v1714231230/menu/instagram_kyk1rs.webp"
-              alt="Ir al Instagram de AMAJOH" loading="eager">
+              alt="Go to AMAJOH Instagram" loading="eager">
           </a>
         </li>
       </ul>

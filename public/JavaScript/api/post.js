@@ -1,3 +1,4 @@
+import { showToast } from '../helpers/showToast.js'
 import { postRequest, showError } from './requestHandler.js'
 import {
   paintOrderInDom,
@@ -30,7 +31,7 @@ export const postMenu = async (form) => {
 export const postRegister = async (form) => {
   try {
     const formData = new FormData(form)
-    await postRequest(`users/register`, formData, form, false)
+    await postRequest(`users/register`, formData, form)
     window.location.href = '../../../index.html'
   } catch (error) {
     showError('Error al registrar usuario', error)
@@ -42,37 +43,33 @@ export const postLogin = async (form) => {
     const email = formData.get('email')
     const password = formData.get('password')
     if (!email || !password)
-      return alert('Por favor, complete todos los campos.')
+      return howToast('Por favor, complete todos los campos.', 'error')
     const passwordPattern = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$/
     if (!passwordPattern.test(password))
-      return alert(
-        'La contraseña debe contener al menos un número, una letra mayúscula y una letra minúscula, y tener al menos 8 caracteres.'
+      return showToast(
+        'La contraseña debe contener al menos un número, una letra mayúscula y una letra minúscula, y tener al menos 8 caracteres.',
+        'error'
       )
-    const response = await postRequest(`users/login`, formData, form, false)
+    const response = await postRequest(`users/login`, formData, form)
     const userId = response.user._id
-    const token = response.token
-    localStorage.setItem('token', token)
-    localStorage.setItem('userId', userId)
-    window.location.href = '/tpv.html#inventario'
+    window.location.href = '/pos.html#inventario'
   } catch (error) {
     showError('Error al iniciar sesión', error)
   }
 }
 export const postOrder = async (order, container) => {
-  const formData = new FormData()
-  formData.append('nameTable', order.nameTable)
-  formData.append('user[]', order.user)
-  order.products.forEach((product, index) =>
-    formData.append(`products[${index}]`, product.id)
-  )
+  const payload = {
+    nameTable: order.nameTable,
+    products: order.products.map((p) => p.id),
+    total: order.total
+  }
   try {
-    const res = await postRequest(`pedidos/`, formData, null)
-    console.log(res.products)
+    const res = await postRequest('pedidos', payload, null, 'no-store')
     updateTableAmount('tablaInventario', res.products)
     paintOrderInDom(res)
     requestAnimationFrame(() => triggerCheckAndPlaySound())
     localStorage.removeItem('order')
-    container.remove()
+    container?.remove()
   } catch (error) {
     showError('Error al registrar pedido', error)
   }
