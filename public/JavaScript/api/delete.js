@@ -9,7 +9,7 @@ export const eliminarElemento = async (id, url, tablaId) => {
       updateAmount(res, 'tablaInventario', 'DELETE')
     return { ok: true }
   } catch (error) {
-    showError(`Error al eliminar`, error)
+    //showError(`Error al eliminar`, error)
     return { ok: false }
   }
 }
