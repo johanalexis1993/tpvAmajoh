@@ -75,10 +75,11 @@
 │ │───index.html
 │ ├───register.html
 │ ├───pos.html
+│ │───_redirects
+│ │───_headers
 │ │──────sitemap.xml
 │ │──────.env
 │ └──────robots.txt
-│──────_headers
 │──────README.md
 │──────.gitignore
 │──────package.json
