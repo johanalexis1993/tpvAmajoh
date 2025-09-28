@@ -1,4 +1,4 @@
-import { deleteRequest, showError } from './requestHandler.js'
+import { deleteRequest } from './requestHandler.js'
 import { updateAmount } from '../logic/post/updateUIAfterPost.js'
 export const eliminarElemento = async (id, url, tablaId) => {
   const confirmacion = confirm('¿Estás seguro de que lo quieres eliminar?')
@@ -9,7 +9,6 @@ export const eliminarElemento = async (id, url, tablaId) => {
       updateAmount(res, 'tablaInventario', 'DELETE')
     return { ok: true }
   } catch (error) {
-    //showError(`Error al eliminar`, error)
     return { ok: false }
   }
 }
