@@ -7,10 +7,12 @@ requestIdleCallback(() => {
     input.setCustomValidity(isMatch ? '' : 'Las contraseñas deben coincidir.')
     input.style.borderColor = isMatch ? 'green' : 'red'
     if (!isMatch) {
-      !input.dataset.alertShown
-        ? (showToast('Las contraseñas no coinciden, rectifícalas.', 'error'),
-          (input.dataset.alertShown = 'true'))
-        : (input.dataset.alertShown = 'false')
+      if (!input.dataset.alertShown) {
+        showToast('Las contraseñas no coinciden, rectifícalas.', 'error')
+        input.dataset.alertShown = 'true'
+      } else {
+        input.dataset.alertShown = 'false'
+      }
     }
   }
   const confirm = (confirmInputId, passwordInputId) => {
@@ -49,6 +51,8 @@ requestIdleCallback(() => {
       input.addEventListener('blur', toggleValidClass)
     })
   })
+})
+requestIdleCallback(() => {
   const labels = ['Muy débil', 'Débil', 'Aceptable', 'Fuerte', 'Muy fuerte']
   document.querySelectorAll('input[type="password"]').forEach((input) => {
     let meter = null

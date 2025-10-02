@@ -44,6 +44,8 @@ const createTooltip = (ingredients) => {
           allergenImg.src = allergenImages[allergen]
           allergenImg.alt = allergen
           allergenImg.title = allergen
+          allergenImg.loading = 'lazy'
+          allergenImg.decoding = 'async'
           allergenImg.style.width = 'var(--1-5rem)'
           allergenImg.style.height = 'var(--1-5rem)'
           allergenImagesContainer.append(allergenImg)
@@ -68,7 +70,8 @@ export const createPlateElement = (plato) => {
   img.src = plato.imgUrl
   img.alt = plato.title
   img.title = plato.title
-  img.loading = 'eager'
+  img.loading = 'lazy'
+  img.decoding = 'async'
   const tooltip = createTooltip(plato.ingredients)
   liPlato.append(tooltip)
   liPlato.classList.add('has-tooltip')

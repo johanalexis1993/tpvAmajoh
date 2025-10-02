@@ -122,19 +122,22 @@ const extractIngredientsFromProducts = (products) => {
   }, [])
 }
 export const updateTableAmount = (tableId, items) => {
-  let ingredients
-  items.length > 0 && items[0].ingredients
-    ? (ingredients = extractIngredientsFromProducts(items))
-    : (ingredients = items)
-  const table = document.querySelector(`#${tableId}`)
+  const ingredients =
+    items.length > 0 && items[0].ingredients
+      ? extractIngredientsFromProducts(items)
+      : items
+  const table = document.getElementById(tableId)
+  if (!table) return
+  const byName = new Map(
+    ingredients.map((ing) => [ing.name, Number.parseInt(ing.amount, 10) || 0])
+  )
   for (let i = 1; i < table.rows.length; i++) {
-    const productName = table.rows[i].cells[0].textContent
-    const ingredient = ingredients.find((ing) => ing.name === productName)
-    if (ingredient) {
-      const cantidadCell = table.rows[i].cells[1]
-      let cantidadActual = parseInt(cantidadCell.textContent)
-      cantidadActual -= parseInt(ingredient.amount)
-      cantidadCell.textContent = cantidadActual
-    }
+    const row = table.rows[i]
+    const name = row.cells[0].textContent.trim()
+    const delta = byName.get(name)
+    if (delta == null) continue
+    const cell = row.cells[1]
+    const current = Number.parseInt(cell.textContent, 10) || 0
+    cell.textContent = String(current - delta)
   }
 }
