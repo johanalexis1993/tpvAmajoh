@@ -1,6 +1,6 @@
 import { postOrder } from '../../api/post.js'
 export const renderOrder = (order) => {
-  const container = document.querySelector('#pedidos ul')
+  const container = document.querySelector('#ordersOpen ul')
   container.innerHTML = ''
   const fragment = document.createDocumentFragment()
   const createListItem = (text) => {

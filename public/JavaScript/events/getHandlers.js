@@ -143,7 +143,6 @@ requestIdleCallback(() => {
       '#enlace-caja',
       () => {
         orders('pedidos/')
-        setInterval(() => orders('pedidos/'), 30000)
         getDishes('plate/')
       }
     ],

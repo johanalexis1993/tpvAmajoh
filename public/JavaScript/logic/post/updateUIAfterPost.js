@@ -40,9 +40,9 @@ export const newLineInTable = (tableId, res, columns) => {
   tabla.querySelector('tbody').append(nuevaFila)
 }
 export const paintOrderInDom = (pedido) => {
-  const pedidosDiv = document.querySelector('#pedidos ul')
+  const ordersOpenDiv = document.querySelector('#ordersOpen ul')
   const pedidoItem = paintOrderItem(pedido)
-  pedidosDiv.append(pedidoItem)
+  ordersOpenDiv.append(pedidoItem)
 }
 export const addPlateToDOM = (plate) => {
   const listPlates = document.querySelector('#platos-lista')

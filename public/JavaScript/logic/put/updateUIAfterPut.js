@@ -71,7 +71,7 @@ export const moveOrderElement = (orderId) => {
   if (!orderItem) return
   const currentStatus = orderButton.getAttribute('data-status')
   const newStatus = currentStatus === 'Listo' ? 'Cobrada' : currentStatus
-  const newContainerId = newStatus === 'Cobrada' ? 'orderPaid' : 'pedidos'
+  const newContainerId = newStatus === 'Cobrada' ? 'orderPaid' : 'ordersOpen'
   orderButton.setAttribute('data-status', newStatus)
   const newContainer = document.querySelector(`#${newContainerId}`)
   if (!newContainer) return

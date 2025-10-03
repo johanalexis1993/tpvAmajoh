@@ -1,7 +1,7 @@
 import { paintOrderItem } from '../put/paintOrderItem.js'
-export const orderPainting = (res, pedidos) => {
-  const pedidosDiv = document.querySelector(`#${pedidos}`)
-  pedidosDiv.innerHTML = ''
+export const orderPainting = (res, ordersOpen) => {
+  const ordersOpenDiv = document.querySelector(`#${ordersOpen}`)
+  ordersOpenDiv.innerHTML = ''
   const ul = document.createElement('ul')
   if (res && res.length > 0) {
     res.forEach((pedido) => {
@@ -9,5 +9,5 @@ export const orderPainting = (res, pedidos) => {
       ul.append(pedidoItem)
     })
   }
-  pedidosDiv.append(ul)
+  ordersOpenDiv.append(ul)
 }

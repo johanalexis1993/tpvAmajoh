@@ -21,9 +21,9 @@ export const peticion = async (
 }
 export const orders = async (url) => {
   const res = await getRequest(url, 'default', 'orders')
-  const { orderPaing, notOrderPaing } = res
-  orderPainting(notOrderPaing, 'pedidos')
-  orderPainting(orderPaing, 'orderPaid')
+  const { paidOrders, openOrders } = res
+  orderPainting(openOrders, 'ordersOpen')
+  orderPainting(paidOrders, 'orderPaid')
   requestAnimationFrame(() => triggerCheckAndPlaySound())
 }
 export const getDishes = async (url) => {

@@ -10,7 +10,7 @@ export const createOrderLocal = (plato) => {
     const nombre = prompt('Por favor, ingresa el nombre de la comanda:')
     if (nombre === null) return console.log('Operación cancelada.')
     order.nameTable = nombre
-    const listaPlatos = document.querySelector('#pedidos')
+    const listaPlatos = document.querySelector('#ordersOpen')
     const ol = document.createElement('ol')
     listaPlatos.append(ol)
   }
