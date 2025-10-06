@@ -50,9 +50,11 @@ const request = async (url, options = {}, cacheMode = 'default') => {
     body = JSON.stringify(body)
   return await handle(
     async () => {
+      //signal
       const response = await fetch(finalUrl, {
         ...options,
         body,
+        //signal,
         credentials: 'include',
         cache: normalizeCacheMode(cacheMode),
         headers: {
@@ -94,6 +96,7 @@ const handleRequest = async ({
   }
   return await handle(() => request(urlWithId, { method, body }, cacheMode), {
     mode: 'strict',
+    //label,
     onError: (err) => showError(`Error en la petición ${method}`, err)
   }).then((res) => {
     if (form && method === 'POST') form.reset()
