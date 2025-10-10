@@ -1,1 +1,1 @@
-/*import '../../JavaScript/events/postHandlers.js'*/
+import '../../JavaScript/events/postHandlers.js'

@@ -27,7 +27,7 @@ export const postMenu = async (form) => {
 export const postRegister = async (form) => {
   const formData = new FormData(form)
   await postRequest('users/register', formData, form, 'default', 'postRegister')
-  window.location.href = '../../../index.html'
+  window.location.href = '/index.html'
 }
 export const postLogin = async (form) => {
   const formData = new FormData(form)

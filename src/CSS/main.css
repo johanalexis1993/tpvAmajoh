@@ -1,6 +1,6 @@
 @layer base, layout, components, utilities;
 
-/*@import url('./base/var.css') layer(base);
+@import url('./base/var.css') layer(base);
 @import url('./base/reset-base.css') layer(base);
 @import url('./base/typography.css') layer(base);
 @import url('./layout/app-shell.css') layer(layout);
@@ -12,4 +12,4 @@
 @import url('./components/media-tooltips.css') layer(components);
 @import url('./components/tables.css') layer(components);
 @import url('./components/toast.css') layer(components);
-@import url('./utilities.css') layer(utilities);*/
+@import url('./utilities.css') layer(utilities);
