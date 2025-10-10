@@ -50,7 +50,7 @@ export const postLogin = async (form) => {
     'postLogin'
   )
   const userId = response.user._id
-  window.location.href = '/pos.html#inventario'
+  window.location.href = '/pos.html'
 }
 export const postOrder = async (order, container) => {
   const payload = {

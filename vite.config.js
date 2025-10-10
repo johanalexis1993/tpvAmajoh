@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    cssCodeSplit: true,
+    cssCodeSplit: false,
     rollupOptions: {
       input: {
         index: resolve(__dirname, 'index.html'),
@@ -18,24 +18,3 @@ export default defineConfig({
     target: 'es2020'
   }
 })
-
-/*
-export default defineConfig({
-  root: 'public',
-  build: {
-    outDir: '../dist',
-    emptyOutDir: true,
-    cssCodeSplit: false,
-    rollupOptions: {
-      input: {
-        index: 'public/index.html',
-        register: 'public/register.html',
-        tpv: 'public/pos.html'
-      }
-    }
-  },
-  server: {
-    port: 5173,
-    open: true
-  }
-})*/
