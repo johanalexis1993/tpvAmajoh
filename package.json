@@ -1,13 +1,30 @@
 {
   "name": "amajoh-pos",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "private": true,
+  "type": "module",
+  "description": "Sistema completo de gestión de punto de venta (TPV) para restaurantes y pequeños negocios.",
+  "author": "Johan Orjuela Monedero",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "vite preview --port 4173",
+    "clean": "rm -rf node_modules dist"
   },
+  "engines": {
+    "node": ">=20.19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johanalexis1993/tpvAmajoh"
+  },
+  "bugs": {
+    "url": "https://github.com/johanalexis1993/tpvAmajoh/issues"
+  },
+  "homepage": "https://github.com/johanalexis1993/tpvAmajoh#readme",
   "devDependencies": {
-    "vite": "^7.1.9"
+    "vite": "^7.1.10"
   }
 }
