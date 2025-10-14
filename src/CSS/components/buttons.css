@@ -4,7 +4,7 @@
   summary,
   button,
   textarea {
-    font-size: clamp(0.75rem, 0.8vw + 0.25rem, 1rem);
+    font-size: clamp(var(--075rem), 0.8vw + var(--025rem), var(--1rem));
     margin: var(--019em);
     padding: var(--03em);
     border: var(--001em) solid var(--th-td-input-select-button);
@@ -21,7 +21,7 @@
     }
     span {
       position: absolute;
-      top: 0.2rem;
+      top: var(--03rem);
       left: var(--05rem);
       color: var(--background-scroll);
       pointer-events: none;
@@ -99,17 +99,17 @@
     }
   }
   .input-valid {
-    border-color: green !important;
+    border-color: var(--green) !important;
   }
   input.input-valid:focus,
   select.input-valid:focus,
   textarea.input-valid:focus {
-    border: 2px solid green !important;
+    border: 2px solid var(--green) !important;
     outline: none !important;
   }
   .upload-status {
     display: block;
-    margin-top: 0.5rem;
+    margin-top: var(--05rem);
   }
   .password-strength-element,
   .dynamic-hidden {

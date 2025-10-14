@@ -1,166 +1,213 @@
-AMAJOH TPV – Documentación Técnica
+AMAJOH TPV – Sistema de Punto de Venta
 
-1ºInstalación y arranque
+Hola, soy Johan, desarrollador full‑stack y creador de AMAJOH TPV, un sistema completo de gestión para restaurantes y pequeños negocios. El objetivo de este proyecto es ofrecer una solución robusta, modular y segura que cubra todas las necesidades de un punto de venta moderno.
 
-Requisitos:
+Contenidos
 
-- Node.js 22 o superior
-- MongoDB Atlas
+Características principales
 
-Backend:
+Instalación y arranque
 
-1. Clonar el repositorio.
+Arquitectura del frontend
 
-2. Crear archivo .env con las variables:
-   PORT=3000
-   DB_URL=mongodb+srv://...
-   JWT_SECRET=...
-   NODE_ENV=development
+Arquitectura del backend
 
-3. Instalar dependencias y arrancar:
-   npm i
-   npm run dev
+Seguridad y roles
 
-Frontend:
+Comunicación en tiempo real
 
-1. Clonar el repositorio.
+Gestión de estado, errores y rendimiento
 
-2. Crear archivo .env con:
-   VITE_API_BASE_URL=http://localhost:3000/api/
+Testing y roadmap
 
-3. Instalar dependencias y arrancar:
-   npm i
-   npm run dev
-   build: npm run build
-   preview: npm run preview
+Mejoras propuestas
 
-2º Arquitectura
+Características principales
 
-Frontend (public/):
+Gestión integral: inventario, menú, pedidos, reservas, clientes, empleados, mermas, escandallos y reportes.
+
+Frontend SPA: HTML5 semántico, CSS modular con variables y @layer, y JavaScript ES6+ organizado en módulos. Utiliza Vite para desarrollo y build optimizado.
+
+Backend Node.js/Express: API REST con MongoDB/Mongoose estructurada en controladores, rutas y middlewares. Siguiendo principios de clean architecture y modularidad.
+
+Actualización en tiempo real: Server‑Sent Events (SSE) y MongoDB Change Streams para sincronizar pedidos sin recargas.
+
+Seguridad: JWT en cookies HttpOnly (\_\_Host-auth), roles RBAC (Admin, Worker, User), CSP estricta con Helmet, CORS controlado y mitigación CSRF.
+
+Rendimiento: build optimizado con Rollup, code splitting, tree‑shaking, requestIdleCallback, debounce y render progresivo; calificaciones muy altas en Lighthouse.
+
+Instalación y arranque
+Requisitos
+
+Node.js v22 o superior.
+
+MongoDB Atlas o instancia local de MongoDB.
+
+Backend (servidorTPV)
+
+Clona el repositorio.
+
+Crea .env con:
+
+PORT=3000
+DB_URL=mongodb+srv://...
+JWT_SECRET=...
+NODE_ENV=development
+BACKEND_DEV=http://localhost:3000
+FRONTEND_DEV=http://localhost:5173
+
+Instala las dependencias: npm i.
+
+Ejecuta npm run dev para desarrollo (nodemon index.js) o npm start para producción.
+
+Frontend (tpvAmajoh)
+
+Clona el repositorio del cliente.
+
+Crea .env con: VITE_API_BASE_URL=http://localhost:3000/api/ y opcionalmente VITE_DEBUG_API=1 para depurar peticiones.
+
+Instala dependencias: npm i.
+
+Ejecuta npm run dev para iniciar Vite. Usa npm run build para generar la versión optimizada y npm run preview para previsualizar el build.
+
+Arquitectura del frontend
+
+El código del cliente se divide por capas y responsabilidades:
+
 CSS:
 
-- Modular por capas:
-- base/: reset-base.css, var.css, typography.css
-- layout/: app-shell.css, header-footer.css, scrollbar.css, sidebar.css
-- components/: buttons.css, forms.css, tables.css, media-tooltips.css, toast.css
-- utilities.css, main.css
+base/: reset-base.css (reinicio), var.css (variables CSS), typography.css (tipografías).
+
+layout/: app-shell.css (estructura del shell), header-footer.css, scrollbar.css, sidebar.css.
+
+components/: estilos para buttons.css, forms.css, tables.css, media-tooltips.css, toast.css.
+
+utilities.css y main.css: utilidades globales y estilos generales.
 
 JavaScript:
 
-- api/: llamadas HTTP centralizadas (gets.js, posts.js, puts.js, deletes.js, requestHandler.js, handle.js)
-- events/: manejadores por método (getHandlers.js, postHandlers.js, putHandlers.js, deleteAndPutHandlers.js)
-- logic/: lógica de UI organizada por operación (get/, post/, put/, delete/)
-- helpers/: utilidades (checkAuth.js, renderChart.js, generatePDF.js, showToast.js, delegateEvents.js, togglePlateButtons.js, etc.)
-- POSoperation/: inicialización, navegación y streaming (initApp.js, sidebar.js, showSection.js, sseOrders.js)
+api/: ficheros gets.js, post.js, put.js, delete.js, requestHandler.js y handle.js centralizan las peticiones HTTP, gestionan cabeceras, errores, reintentos y muestran toasts en caso de fallo.
 
-Backend (src/):
+events/: manejadores agrupados por verbo (getHandlers.js, postHandlers.js, putHandlers.js, deleteAndPutHandlers.js) que delegan la lógica específica a la carpeta logic/.
 
-- api/controllers/: lógica de negocio (por ejemplo controllerUsers.js, controllerPedidos.js)
-- api/routes/: rutas Express (routeUsers.js, routePedidos.js, etc.)
-- middlewares/: seguridad (auth.js, hasAnyRole.js, verifyJwt.js, errHandler.js, setupCors.js)
-- config/: configuración (db.js, cloudinary.js, security.js, staticFiles.js)
-- utils/: utilidades auxiliares
-- index.js: servidor Express con compresión, cookies seguras, Helmet CSP, CORS, estáticos y routers
+logic/: contiene subcarpetas por operación:
 
-3º Seguridad
+delete/: updateUIAfterDelete.js.
 
-Autenticación:
-POST /users/login: genera JWT y lo entrega en cookie **Host-auth (HttpOnly, SameSite=lax, Secure en prod)
-GET /users/me: valida token desde cookie y devuelve perfil
-Logout: implementado con res.clearCookie('**Host-auth', …)
+get/: autocomplete.js, orderPainting.js, updateTables.js, createPlateElement.js, paintingPlates.js, renderList.js, processPlatesData.js.
 
-CSP y cabeceras:
-Configuradas con Helmet (src/config/security.js)
-contentSecurityPolicy con directivas que bloquean iframes, objetos, scripts externos y solo permiten orígenes seguros y Cloudinary para imágenes.
+post/: createOrderLocal.js, updateUIAfterPost.js, renderOrder.js.
 
-CORS:
-Orígenes permitidos:
-Producción: https://tpv-amajoh.netlify.app
-Desarrollo: http://localhost:5173
-y http://localhost:3000
-Cookies con credentials:true
+put/: paintOrderItem.js, updateUIAfterPut.js, createOrderElements.js, appendOrderElementsToDom.js, createAndConfigureButtons.js.
 
-Protección CSRF:
-Mitigación implícita gracias a:
+helpers/: utilidades generales como showToast.js, checkAndPlaySound.js, togglePlateButtons.js, confirmPassword.js, functionCheckbox.js, generatePDF.js, renderChart.js, delegateEvents.js, checkAuth.js, watermark.js, inputFile.js, addIngredient.js.
 
-- Cookies HttpOnly + SameSite=Lax/Strict + Secure en producción
-- CORS restringido
-- No se exponen tokens en JS
-  No se requiere middleware csurf
+POSoperation/: control de la aplicación POS (inicialización con initApp.js, navegación con sidebar.js, cambio de secciones con showSection.js y streaming con sseOrders.js).
 
-Roles (RBAC):
-Admin, Worker y User definidos
-Middleware hasAnyRole aplicado en rutas sensibles
+HTMLs: las vistas están en index.html (login), register.html y pos.html.
 
-4º Endpoints principales
+El diseño modular y el uso de ESM permiten que la build aproveche tree‑shaking para eliminar código muerto. El roadmap incluye extraer los componentes principales en una mini‑librería treeshakeable reutilizable en otros proyectos.
 
-Usuarios / Auth:
-POST /api/v1/users/register { name, email, pwd } Público { user }
-POST /api/v1/users/login { email, pwd } Público { user }, cookie auth
-GET /api/v1/users/me — User/Admin { id, name, email, role }
-GET /api/v1/users — Admin [ { user }, … ]
-PUT /api/v1/users/:id {…} Admin/Worker user actualizado
-DELETE /api/v1/users/:id — Admin user eliminado
+Arquitectura del backend
 
-Estructura extensible para pedidos, menú, reservas, inventario, etc.
+El servidor Express está organizado de forma clara:
 
-5º Estado en cliente
+Controladores (api/controllers/): gestionan la lógica de negocio. Ejemplos:
 
-Uso actual: persistencia mínima en localStorage (solo datos temporales)
-Flujo principal gestionado mediante módulos de UI y requestHandler.js
-Roadmap: implementar store in-memory con suscripción reactiva para trazabilidad global
+contollerUsers.js: registro (asigna roles en función de los datos suministrados), login (verifica contraseña con bcrypt y genera JWT), obtención y actualización de usuarios.
 
-6º Errores y notificaciones
+controllerOrders.js, contollerProducts.js, controllersDeEstadisticas.js, etc. manejan otras entidades.
 
-Actual: sistema central de toasts no bloqueantes (helpers/showToast.js)
-alert() y prompt() eliminados completamente
-confirm() pendiente de migración a modal accesible personalizado
-Futuro: modal universal reutilizable con foco gestionado (aria-modal, role="dialog")
+Rutas (api/routes/): definen los endpoints (mainRouters.js, routeUsers.js, routeOrders.js, routesPlates.js, routeReservation.js, etc.) y aplican middlewares de autenticación/autorización según corresponda.
 
-7º Comunicación en tiempo real
+Modelos (api/models/): esquemas Mongoose para usuarios (modelUsers.js), pedidos (modelOrders.js), platos (modelPlates.js), productos (modelProducts.js), reservas (modelReservation.js), mermas (modelWastage.js).
 
-Implementado mediante SSE (Server-Sent Events) y MongoDB ChangeStream
+Middlewares (src/middlewares/):
 
-Ejemplo backend:
-const changeStream = Pedido.watch([], { fullDocument: 'updateLookup' })
-changeStream.on('change', async () => await sendOrders())
+auth.js y hasAnyRole.js para validar JWT y roles.
 
-res.setHeader('Content-Type', 'text/event-stream')
-EventSource en el front (sseOrders.js)
-Heartbeat cada 30 s para mantener conexión viva
-Limpieza de recursos al cerrar la conexión
-Flujo completo reactivo: DB → backend → frontend
+errHandler.js para gestionar errores globales.
 
-8º Rendimiento
+setupCors.js y security.js para configurar CORS y CSP con Helmet.
 
-Bundling: Vite genera un bundle único optimizado
-Optimizaciones activas:
+multerNone.js, file.js para subida de ficheros, notCompressionSSE.js para no comprimir eventos SSE.
 
-- requestIdleCallback para tareas no críticas
-- debounce en eventos frecuentes
-- Render progresivo de tablas y listas
-- Lighthouse 99-100 %
-- SSE: actualizaciones en tiempo real sin polling
-  Roadmap: Service Worker (offline/cache) y lazy loading selectivo
+Config (src/config/):
 
-9º Testing
+db.js se conecta a MongoDB.
 
-Pendiente de implementar Vitest o Jest
-Cobertura inicial prevista:
+envConfig.js determina si el entorno es producción o desarrollo y selecciona URLs.
 
-- processPlatesData
-- updateAmount
-- updateUIAfterPost
+staticFiles.js sirve archivos estáticos con cabeceras de caché dependiendo del entorno.
 
-10º Roadmap inmediato
-11º Sustituir confirm() por modal accesible
-12º Migrar generatePDF al backend
-13º Introducir store in-memory (observer pattern)
-14º Añadir test unitarios (Vitest)
-15º Integrar CI/CD básico (GitHub Actions)
+Utils (src/utils/): funciones auxiliares (cloudinary.js para imágenes, deleteFile.js, jwt.js para generar/verificar tokens, handleErr.js).
 
-Autor
+El archivo index.js monta el servidor Express: configura trust proxy, aplica middlewares globales, define los orígenes CORS permitidos (Netlify en producción, localhost:5173 y localhost:3000 en desarrollo), carga los routers, sirve archivos estáticos y aplica el manejador de errores.
 
-Johan Alexis – Desarrollador Full-Stack
-Arquitectura modular, enfoque en seguridad, rendimiento y escalabilidad
-Comprometido con la mejora continua y el código mantenible
+Seguridad y roles
+
+Autenticación: se realiza con JWT almacenado en cookie HttpOnly. El login (POST /api/v1/users/login) devuelve el token; GET /api/v1/users/me devuelve el perfil del usuario autenticado. También existen rutas para registrar (/api/v1/users/register), listar todos (/api/v1/users) y gestionar usuarios (/api/v1/users/:id) solo accesibles según rol.
+
+Roles (RBAC): Admin, Worker y User. El middleware hasAnyRole protege rutas sensibles. Los roles se asignan automáticamente al registrar dependiendo de los datos suministrados (p. ej. clientes con tarjeta de crédito se registran como Cliente).
+
+CSP y CORS: Helmet establece directivas estrictas (bloquea iframes, objetos y scripts externos; limita img-src a orígenes seguros y Cloudinary). CORS solo permite orígenes de confianza y las cookies se envían con credentials: true.
+
+Protección CSRF: se basa en cookies HttpOnly con SameSite=Lax/Strict y en el control de orígenes; no se exponen tokens en JS, por lo que no se requiere csurf.
+
+Manejo de errores: un manejador central (errHandler.js) captura excepciones y devuelve respuestas consistentes. Se recomienda introducir una clase ApiError para estandarizar los errores y ocultar detalles sensibles en producción.
+
+Comunicación en tiempo real
+
+Se implementa un sistema reactivo basado en SSE:
+
+En el backend se abre un MongoDB Change Stream para la colección de pedidos y se envían eventos a los clientes cuando se insertan o actualizan documentos.
+
+Los clientes se suscriben mediante EventSource en sseOrders.js y actualizan la UI sin recargar la página. Un heartbeat cada 30 s mantiene la conexión activa.
+
+Es importante cerrar la conexión y limpiar los observadores cuando la vista no se necesita para evitar fugas de memoria.
+
+Gestión de estado, errores y rendimiento
+
+Estado en cliente: actualmente se usa localStorage solo para datos temporales. Se planea implementar una store in‑memory con patrón observador para centralizar el estado y notificar cambios de forma reactiva.
+
+Errores y notificaciones: la UI muestra toasts no bloqueantes (helpers/showToast.js). alert() y prompt() están eliminados; se prevé sustituir confirm() por un modal accesible reutilizable con aria-modal y role="dialog".
+
+Optimización de rendimiento: se utilizan requestIdleCallback para tareas no críticas, debounce para eventos frecuentes y renderizado progresivo de tablas/listas. La build con Rollup optimiza el bundle con minificación, hashing y tree‑shaking. Está en el roadmap añadir lazy loading y un Service Worker para caché offline y conversión a PWA.
+
+Testing y roadmap
+
+Tests: aún no hay tests automatizados. Se planea usar Vitest o Jest para unit tests de módulos críticos (como processPlatesData, updateAmount, updateUIAfterPost) y supertest para pruebas de API.
+
+CI/CD: se proyecta integrar un pipeline básico con GitHub Actions para ejecutar tests, ESLint/Prettier y despliegues automáticos.
+
+Tareas inmediatas:
+
+Sustituir confirm() por un modal accesible.
+
+Migrar generatePDF.js al backend (usando pdfkit o puppeteer) para generar tickets/recibos de forma segura.
+
+Implementar la store in‑memory con patrón observador.
+
+Añadir los primeros test unitarios.
+
+Configurar CI/CD y despliegue con Netlify/Vercel.
+
+Mejoras propuestas
+
+Además del roadmap original, considero importantes las siguientes acciones:
+
+Escalar a microservicios: separar dominios (usuarios, pedidos, productos…) en servicios independientes con comunicación mediante eventos o API; así se puede escalar cada módulo por separado.
+
+Capa de dominio independiente: extraer la lógica de negocio de los controladores a casos de uso/servicios para cumplir mejor con clean architecture y facilitar tests.
+
+Validación de datos robusta: integrar librerías como Joi o Zod para validar entradas de forma declarativa y centralizar las reglas.
+
+Rotación de tokens y CSRF reforzado: reducir la duración del JWT (p. ej. 7–30 días), añadir refresh tokens y considerar tokens anti‑CSRF (double‑submit cookie) si se integran formularios sensibles.
+
+Accesibilidad e internacionalización: asegurar roles dialog en modales, contrastes adecuados, foco visible y permitir desactivar sonidos; planificar soporte multilingüe con i18next.
+
+Observabilidad: añadir logs estructurados, métricas (Prometheus/Grafana) y health checks para monitorizar la aplicación en producción.
+
+Conclusión
+
+AMAJOH TPV es una plataforma POS moderna que combina una arquitectura modular, un pipeline de desarrollo avanzado y actualizaciones en tiempo real. Con las mejoras propuestas (PWA, mini‑librería, separación de dominios, validación formal, tests y CI/CD) el proyecto estará preparado para crecer, ser mantenible y adaptarse a nuevas necesidades. ¡Gracias por interesarte y espero que te animes a contribuir!

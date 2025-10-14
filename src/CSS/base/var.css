@@ -1,20 +1,21 @@
 @layer base {
   :root {
-    --color-text: #444;
-    --color-highlight: #4bc0c0;
-    --text-white: #ecf0f1;
-    --background-body: #fffcfc;
-    --th-td-input-select-button: #ccc;
-    --background-scroll: #555;
     --hoverButton: #fcf8f8;
+    --background-body: #fffcfc;
+    --text-white: #ecf0f1;
+    --th-td-input-select-button: #ccc;
+    --color-text: #444;
+    --background-scroll: #555;
     --black: #000;
-    --header-footer-color: #34495e;
-    --background-sidebar: #2c3e50;
     --link-hover-color: #1f2c35;
+    --background-sidebar: #2c3e50;
+    --header-footer-color: #34495e;
+    --color-highlight: #4bc0c0;
     --background-button: #3498db;
     --button-hover: #2980b9;
     --orange: #ff6600;
     --green: #447a17;
+    --softGreen: #28a745;
     --red: #f00;
     --0-1negrem: -0.1rem;
     --007rem: 0.07rem;
@@ -23,6 +24,7 @@
     --019rem: 0.19rem;
     --02rem: 0.2rem;
     --025rem: 0.25rem;
+    --03rem: 0.3rem;
     --032rem: 0.32rem;
     --037rem: 0.37rem;
     --04rem: 0.4rem;
@@ -44,7 +46,6 @@
     --10rem: 10rem;
     --12-5rem: 12.5rem;
     --15-6rem: 15.6rem;
-    /*--20rem: 25rem;*/
     --001em: 0.01em;
     --019em: 0.19em;
     --025em: 0.25em;

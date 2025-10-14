@@ -32,4 +32,4 @@ ini Copiar código PORT=3000 DB_URL=mongodb+srv://... JWT_SECRET=... Frontend ba
 
 bash Copiar código VITE_API_BASE_URL=http://localhost:3000/api/ 📖 Documentación técnica La documentación completa de arquitectura, endpoints, seguridad (CSP, cookies httpOnly), estado en cliente, errores/notificaciones, rendimiento y roadmap se encuentra en: 👉 DOC_TECNICO.md
 
-👨‍💻 Autor Johan Alexis – Desarrollador Full-Stack Enfoque en arquitectura, rendimiento y seguridad. Aprendizaje continuo.
+👨‍💻 Autor Johan Alexis – Desarrollador Full-Stack Enfoque en arquitectura, rendimiento y seguridad. Aprendizaje continuo (Asistido por IA).

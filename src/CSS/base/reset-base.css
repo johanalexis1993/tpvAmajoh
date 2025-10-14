@@ -9,7 +9,7 @@
     text-decoration: none;
   }
   html {
-    font-size: clamp(13px, 1vw + 4px, 32px);
+    font-size: clamp(10px, 1vw + 4px, 32px);
   }
   body {
     font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;

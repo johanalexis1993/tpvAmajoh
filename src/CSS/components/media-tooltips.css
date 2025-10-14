@@ -17,7 +17,7 @@
     > ul > li {
       margin: 15px;
       box-shadow: 0 6px 23px -15px rgba(0, 0, 0, 0.75);
-      padding: 1rem var(--032rem);
+      padding: var(--1rem) var(--032rem);
       transition: transform 0.3s;
       @media (hover: hover) {
         &:hover {
@@ -74,7 +74,7 @@
     background: rgba(0, 0, 0, 0.75);
     color: var(--text-white);
     padding: var(--025rem) var(--05rem);
-    font-size: 0.75rem;
+    font-size: var(--075rem);
     transition: opacity 0.15s ease;
   }
 }
