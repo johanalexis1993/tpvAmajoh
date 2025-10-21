@@ -42,14 +42,14 @@ export const postLogin = async (form) => {
       'error'
     )
   }
-  const response = await postRequest(
+  /*const response =*/ await postRequest(
     'users/login',
     formData,
     form,
     'default',
     'postLogin'
   )
-  const userId = response.user._id
+  // const userId = response.user._id
   window.location.href = '/pos.html'
 }
 export const postOrder = async (order, container) => {

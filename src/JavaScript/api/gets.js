@@ -5,6 +5,35 @@ import { orderPainting } from '../logic/get/orderPainting.js'
 import { triggerCheckAndPlaySound } from '../helpers/checkAndPlaySound.js'
 import { renderChart } from '../helpers/renderChart.js'
 import { renderList } from '../logic/get/renderList.js'
+import { LS } from '../storage/hydrateFromStore.js'
+/*----------------------------------------------------------*/
+/*import { LS } from '../storage/hydrateFromStore.js'*/
+const hydrateFromStore = async () => {
+  const open = await LS.get('orders:open', [])
+  const paid = await LS.get('orders:paid', [])
+  console.log('[FROM-IDB] orders to paint', { open, paid })
+  orderPainting(open, 'ordersOpen')
+  orderPainting(paid, 'orderPaid')
+}
+const hydrateFromStore2 = async () => {
+  const available = await LS.get('plates:available', [])
+  const unavailable = await LS.get('plates:unavailable', [])
+  console.log('[FROM-IDB] plates to paint', { available, unavailable })
+  processPlatesData('platos-lista', available)
+  processPlatesData('unavailables', unavailable)
+}
+const hydrateFromStore3 = async (tablaId) => {
+  const id = await LS.get(`tableId:${tablaId}`, [])
+  const data = await LS.get(`tableData:${tablaId}`, [])
+  const cols = await LS.get(`tableColumns:${tablaId}`, [])
+  console.log(`[FROM-IDB] DATA to paint for tablaId ${tablaId}`, {
+    id,
+    data,
+    cols
+  })
+  actualizarTabla(tablaId, data, cols)
+}
+/*----------------------------------------------------------*/
 export const peticion = async (
   url,
   tablaId,
@@ -12,25 +41,37 @@ export const peticion = async (
   page = 1,
   limit = 20
 ) => {
-  const res = await getRequest(
-    `${url}?page=${page}&limit=${limit}`,
-    'default',
-    'peticion→actualizarTabla'
-  )
-  actualizarTabla(tablaId, res, columnas)
+  const res =
+    (await getRequest(
+      `${url}?page=${page}&limit=${limit}`,
+      'default',
+      'peticion→actualizarTabla'
+    )) || {}
+  await LS.batchSet({
+    [`tableId:${tablaId}`]: tablaId,
+    [`tableData:${tablaId}`]: res,
+    [`tableColumns:${tablaId}`]: columnas
+  })
+  await hydrateFromStore3(tablaId)
 }
 export const orders = async (url) => {
-  const res = await getRequest(url, 'default', 'orders')
-  const { paidOrders, openOrders } = res
-  orderPainting(openOrders, 'ordersOpen')
-  orderPainting(paidOrders, 'orderPaid')
+  const { paidOrders = [], openOrders = [] } =
+    (await getRequest(url, 'default', 'orders')) || {}
+  await LS.batchSet({
+    'orders:open': openOrders,
+    'orders:paid': paidOrders
+  })
+  hydrateFromStore()
   requestAnimationFrame(() => triggerCheckAndPlaySound())
 }
 export const getDishes = async (url) => {
-  const res = await getRequest(url, 'no-store', 'getDishes')
-  const { availablePlates, unavailablePlates } = res
-  processPlatesData('unavailables', unavailablePlates)
-  processPlatesData('platos-lista', availablePlates)
+  const { availablePlates = [], unavailablePlates = [] } =
+    (await getRequest(url, 'no-store', 'getDishes')) || {}
+  await LS.batchSet({
+    'plates:available': availablePlates,
+    'plates:unavailable': unavailablePlates
+  })
+  hydrateFromStore2()
 }
 const adaptProcessData = (id, res, processData, columns) =>
   columns ? processData(id, res, columns) : processData(id, res)
