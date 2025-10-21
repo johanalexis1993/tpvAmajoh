@@ -78,7 +78,7 @@
   │   │   │       ├───createOrderElements.js
   │   │   │       ├───appendOrderElementsToDom.js
   │   │   │       └───createAndConfigureButtons.js
-  │   │   ├───storege/
+  │   │   ├───storage/
   │   │   │   └───hydrateFromStore.js
   │   │   └───POSoperation/
   │   │       ├───sseOrders.js
@@ -104,6 +104,6 @@
   ├────.gitignore
   ├────package.json
   ├────package-lock.json
-  └────.vite.config.js
+  └────vite.config.js
 
 ```
