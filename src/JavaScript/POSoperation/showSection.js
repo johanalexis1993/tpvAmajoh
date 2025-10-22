@@ -1,13 +1,13 @@
 const updates = []
-const queueUpdate = (fn) => {
-  updates.push(fn)
-  if (updates.length === 1) requestAnimationFrame(flushUpdates)
-}
 const flushUpdates = () => {
   while (updates.length) {
     const fn = updates.shift()
     fn()
   }
+}
+const queueUpdate = (fn) => {
+  updates.push(fn)
+  if (updates.length === 1) requestAnimationFrame(flushUpdates)
 }
 const sections = {}
 document.querySelectorAll('section').forEach((section) => {

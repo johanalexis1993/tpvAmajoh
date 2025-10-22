@@ -77,7 +77,7 @@ requestIdleCallback(() => {
         ])
     ],
     [
-      '#enlace-Losses',
+      '#enlace-losses',
       () =>
         peticion(
           'wasteControl/',

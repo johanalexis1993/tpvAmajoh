@@ -6,6 +6,7 @@ import {
   addPlateToDOM
 } from '../logic/post/updateUIAfterPost.js'
 import { triggerCheckAndPlaySound } from '../helpers/checkAndPlaySound.js'
+import { LS } from '../storage/hydrateFromStore.js'
 export const postPetition = async (form, url) => {
   const formData = new FormData(form)
   const res = await postRequest(
@@ -42,15 +43,13 @@ export const postLogin = async (form) => {
       'error'
     )
   }
-  /*const response =*/ await postRequest(
-    'users/login',
-    formData,
-    form,
-    'default',
-    'postLogin'
-  )
-  // const userId = response.user._id
+  await postRequest('users/login', formData, form, 'default', 'postLogin')
+  await LS.set('nav:currentSectionId', 'inventario')
   window.location.href = '/pos.html'
+}
+export const postLogout = async () => {
+  await postRequest('users/logout', undefined, null, 'no-store')
+  window.location.replace('/index.html')
 }
 export const postOrder = async (order, container) => {
   const payload = {

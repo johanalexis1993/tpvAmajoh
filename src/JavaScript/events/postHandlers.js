@@ -1,9 +1,23 @@
-import { postPetition, postMenu, postRegister, postLogin } from '../api/post.js'
+import {
+  postPetition,
+  postMenu,
+  postRegister,
+  postLogin,
+  postLogout
+} from '../api/post.js'
 import {
   newLineInTable,
   updateAmount,
   updateTableAmount
 } from '../logic/post/updateUIAfterPost.js'
+requestIdleCallback(() => {
+  document.addEventListener('click', async (e) => {
+    const link = e.target.closest('#enlace-logout')
+    if (!link) return
+    e.preventDefault()
+    await postLogout()
+  })
+})
 document.addEventListener('submit', async (e) => {
   e.preventDefault()
   const form = e.target

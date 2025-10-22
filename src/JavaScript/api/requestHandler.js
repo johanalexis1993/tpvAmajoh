@@ -99,7 +99,8 @@ const handleRequest = async ({
     //label,
     onError: (err) => showError(`Error en la petición ${method}`, err)
   }).then((res) => {
-    if (form && method === 'POST') form.reset()
+    if (form && method === 'POST' && typeof form.reset === 'function')
+      form.reset()
     return res
   })
 }

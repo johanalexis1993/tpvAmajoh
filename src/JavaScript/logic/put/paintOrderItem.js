@@ -18,7 +18,7 @@ export const paintOrderItem = (pedido) => {
   const pedidoItem = document.createElement('li')
   const details = document.createElement('details')
   const summary = document.createElement('summary')
-  summary.textContent = `Pedido: ${table}`
+  summary.textContent = `Mesa: ${table}`
   details.append(summary)
   const elements = createOrderElements(
     pedido,

@@ -8,7 +8,7 @@ export const createOrderElements = (
 ) => {
   const elements = [
     { label: 'Pedido ID:', value: pedido._id },
-    { label: 'Pedido:', value: table },
+    { label: 'Mesa:', value: table },
     { label: 'Cliente:', value: cliente },
     { label: 'Total:', value: pedido.total },
     { label: 'Productos:', value: productos },

@@ -60,7 +60,7 @@ export const createAndConfigureButtons = (pedido, pedidoItem) => {
   })
   if (pedido.nameTable) {
     const updateBtn = document.createElement('button')
-    updateBtn.textContent = 'mas'
+    updateBtn.textContent = 'Añadir'
     updateBtn.setAttribute('data-order-id', pedido._id)
     updateBtn.id = `update-btn-${pedido._id}`
     pedidoItem.append(updateBtn)
