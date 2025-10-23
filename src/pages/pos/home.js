@@ -8,3 +8,9 @@ import '../../JavaScript/events/putHandlers.js'
 import '../../JavaScript/events/deleteAndPutHandlers.js'
 import '../../JavaScript/helpers/addIngredient.js'
 import '../../JavaScript/helpers/inputFile.js'
+import { LS } from '../../JavaScript/storage/hydrateFromStore.js'
+import { renderOrder } from '../../JavaScript/logic/post/renderOrder.js'
+requestIdleCallback(async () => {
+  const order = await LS.get('order')
+  if (order?.products?.length) renderOrder(order)
+})

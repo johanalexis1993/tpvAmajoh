@@ -1,11 +1,8 @@
 import { renderOrder } from './renderOrder.js'
-export const createOrderLocal = (plato) => {
+import { LS } from '../../storage/hydrateFromStore.js'
+export const createOrderLocal = async (plato) => {
   const KEY = 'order'
-  let order = JSON.parse(localStorage.getItem(KEY)) || {
-    nameTable: '',
-    products: [],
-    total: 0
-  }
+  let order = await LS.get(KEY, { nameTable: '', products: [], total: 0 })
   if (order.products.length === 0) {
     const nombre = prompt('Por favor, ingresa el nombre de la comanda:')
     if (nombre === null) return console.log('Operación cancelada.')
@@ -16,6 +13,6 @@ export const createOrderLocal = (plato) => {
   }
   order.products.push({ id: plato._id, title: plato.title, price: plato.price })
   order.total += plato.price
-  localStorage.setItem(KEY, JSON.stringify(order))
+  await LS.set(KEY, order)
   renderOrder(order)
 }

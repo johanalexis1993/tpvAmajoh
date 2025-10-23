@@ -67,6 +67,6 @@ export const postOrder = async (order, container) => {
   updateTableAmount('tablaInventario', res.products)
   paintOrderInDom(res)
   requestAnimationFrame(() => triggerCheckAndPlaySound())
-  localStorage.removeItem('order')
+  await LS.del('order')
   container?.remove()
 }

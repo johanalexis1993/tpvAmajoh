@@ -66,4 +66,17 @@ const sub = (k, fn) => {
   window.addEventListener('ls:update', handler)
   return () => window.removeEventListener('ls:update', handler)
 }
-export const LS = { get, set, update, batchSet, sub }
+const del = async (k) => {
+  const db = await openDB()
+  await new Promise((res, rej) => {
+    const tx = db.transaction(STORE_NAME, 'readwrite')
+    tx.objectStore(STORE_NAME).delete(keyFor(k))
+    tx.oncomplete = res
+    tx.onerror = () => rej(tx.error)
+  })
+  db.close()
+  window.dispatchEvent(
+    new CustomEvent('ls:update', { detail: { key: k, value: undefined } })
+  )
+}
+export const LS = { get, set, update, batchSet, sub, del }
