@@ -100,9 +100,9 @@ post/: createOrderLocal.js, updateUIAfterPost.js, renderOrder.js.
 
 put/: paintOrderItem.js, updateUIAfterPut.js, createOrderElements.js, appendOrderElementsToDom.js, createAndConfigureButtons.js.
 
-helpers/: utilidades generales como showToast.js, checkAndPlaySound.js, togglePlateButtons.js, confirmPassword.js, functionCheckbox.js, generatePDF.js, renderChart.js, delegateEvents.js, checkAuth.js, watermark.js, inputFile.js, addIngredient.js.
+helpers/: utilidades generales como showToast.js, checkAndPlaySound.js, togglePlateButtons.js, confirmPassword.js, bindCheckboxGroup.js, generatePDF.js, renderChart.js, delegateEvents.js, checkAuth.js, watermark.js, inputFile.js, addIngredient.js.
 
-POSoperation/: control de la aplicación POS (inicialización con initApp.js, navegación con sidebar.js, cambio de secciones con showSection.js y streaming con sseOrders.js).
+app/: control de la aplicación POS (inicialización con initApp.js, navegación con sidebar.js, cambio de secciones con showSection.js y streaming con sseOrders.js).
 
 HTMLs: las vistas están en index.html (login), register.html y pos.html.
 

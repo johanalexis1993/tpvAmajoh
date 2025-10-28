@@ -1,5 +1,6 @@
 import { showSection } from './showSection.js'
-import { LS } from '../storage/hydrateFromStore.js'
+import { LS } from '../storage/indexedDB'
+import '../helpers/watermark.js'
 const routes = {
   agregarPlato: 'agregarPlato',
   inventario: 'inventario',

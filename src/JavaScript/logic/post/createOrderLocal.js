@@ -1,5 +1,6 @@
 import { renderOrder } from './renderOrder.js'
-import { LS } from '../../storage/hydrateFromStore.js'
+//import { LS } from '@/JavaScript/storage/indexedDB'
+import { LS } from '../../storage/indexedDB'
 export const createOrderLocal = async (plato) => {
   const KEY = 'order'
   let order = await LS.get(KEY, { nameTable: '', products: [], total: 0 })

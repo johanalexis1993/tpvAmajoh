@@ -1,5 +1,5 @@
 import { putOrder, updateOrderStatus } from '../../api/put.js'
-import { functionCheckbox } from '../../helpers/functionCheckbox.js'
+import { functionCheckbox } from '../../helpers/bindCheckboxGroup.js'
 import { togglePlateButtons } from '../../helpers/togglePlateButtons.js'
 import { triggerCheckAndPlaySound } from '../../helpers/checkAndPlaySound.js'
 import { showToast } from '../../helpers/showToast.js'

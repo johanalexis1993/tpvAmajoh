@@ -1,39 +1,13 @@
 import { getRequest } from './requestHandler.js'
-import { actualizarTabla } from '../logic/get/updateTables.js'
-import { processPlatesData } from '../logic/get/processPlatesData.js'
-import { orderPainting } from '../logic/get/orderPainting.js'
 import { triggerCheckAndPlaySound } from '../helpers/checkAndPlaySound.js'
 import { renderChart } from '../helpers/renderChart.js'
 import { renderList } from '../logic/get/renderList.js'
-import { LS } from '../storage/hydrateFromStore.js'
-/*----------------------------------------------------------*/
-/*import { LS } from '../storage/hydrateFromStore.js'*/
-const hydrateFromStore = async () => {
-  const open = await LS.get('orders:open', [])
-  const paid = await LS.get('orders:paid', [])
-  console.log('[FROM-IDB] orders to paint', { open, paid })
-  orderPainting(open, 'ordersOpen')
-  orderPainting(paid, 'orderPaid')
-}
-const hydrateFromStore2 = async () => {
-  const available = await LS.get('plates:available', [])
-  const unavailable = await LS.get('plates:unavailable', [])
-  console.log('[FROM-IDB] plates to paint', { available, unavailable })
-  processPlatesData('platos-lista', available)
-  processPlatesData('unavailables', unavailable)
-}
-const hydrateFromStore3 = async (tablaId) => {
-  const id = await LS.get(`tableId:${tablaId}`, [])
-  const data = await LS.get(`tableData:${tablaId}`, [])
-  const cols = await LS.get(`tableColumns:${tablaId}`, [])
-  console.log(`[FROM-IDB] DATA to paint for tablaId ${tablaId}`, {
-    id,
-    data,
-    cols
-  })
-  actualizarTabla(tablaId, data, cols)
-}
-/*----------------------------------------------------------*/
+import {
+  hydrateOrders,
+  hydratePlates,
+  hydrateTable
+} from '../logic/get/hydration.js'
+import { LS } from '../storage/indexedDB'
 export const peticion = async (
   url,
   tablaId,
@@ -52,7 +26,7 @@ export const peticion = async (
     [`tableData:${tablaId}`]: res,
     [`tableColumns:${tablaId}`]: columnas
   })
-  await hydrateFromStore3(tablaId)
+  await hydrateTable(tablaId)
 }
 export const orders = async (url) => {
   const { paidOrders = [], openOrders = [] } =
@@ -61,7 +35,7 @@ export const orders = async (url) => {
     'orders:open': openOrders,
     'orders:paid': paidOrders
   })
-  hydrateFromStore()
+  await hydrateOrders()
   requestAnimationFrame(() => triggerCheckAndPlaySound())
 }
 export const getDishes = async (url) => {
@@ -71,7 +45,7 @@ export const getDishes = async (url) => {
     'plates:available': availablePlates,
     'plates:unavailable': unavailablePlates
   })
-  hydrateFromStore2()
+  await hydratePlates()
 }
 const adaptProcessData = (id, res, processData, columns) =>
   columns ? processData(id, res, columns) : processData(id, res)

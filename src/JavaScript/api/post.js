@@ -6,7 +6,7 @@ import {
   addPlateToDOM
 } from '../logic/post/updateUIAfterPost.js'
 import { triggerCheckAndPlaySound } from '../helpers/checkAndPlaySound.js'
-import { LS } from '../storage/hydrateFromStore.js'
+import { LS } from '../storage/indexedDB'
 export const postPetition = async (form, url) => {
   const formData = new FormData(form)
   const res = await postRequest(

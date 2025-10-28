@@ -1,5 +1,5 @@
 import { showToast } from '../helpers/showToast.js'
-import { handle } from './handle.js'
+import { handle } from './runWithTimeout.js'
 export const BASE_URL = import.meta.env.VITE_API_BASE_URL
 let lastAlertTs = 0
 export const showError = (message, error) => {

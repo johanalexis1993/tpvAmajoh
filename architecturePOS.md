@@ -50,7 +50,7 @@
   │   │   │   ├───checkAuth.js
   │   │   │   ├───confirmPassword.js
   │   │   │   ├───delegateEvents.js
-  │   │   │   ├───functionCheckbox.js
+  │   │   │   ├───bindCheckboxGroup.js
   │   │   │   ├───generatePDF.js
   │   │   │   ├───inputFile.js
   │   │   │   ├───renderChart.js
@@ -79,8 +79,8 @@
   │   │   │       ├───appendOrderElementsToDom.js
   │   │   │       └───createAndConfigureButtons.js
   │   │   ├───storage/
-  │   │   │   └───hydrateFromStore.js
-  │   │   └───POSoperation/
+  │   │   │   └───actualizar esta carpeta
+  │   │   └───app/
   │   │       ├───sseOrders.js
   │   │       ├───sidebar.js
   │   │       ├───showSection.js

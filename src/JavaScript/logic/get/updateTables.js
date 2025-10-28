@@ -45,6 +45,19 @@ prepararEstructuraTabla(
   20
 )
 prepararEstructuraTabla('clientes', ['name', 'email', 'telephon'], 20)
+prepararEstructuraTabla(
+  'salesByMonth',
+  [
+    'Dia',
+    'Tarjeta',
+    'Efectivo',
+    'Maquinas Recreativas',
+    'Glovo',
+    'Tienda Online',
+    'Total TPV'
+  ],
+  20
+)
 const getCellContent = (item, columna) => {
   switch (columna) {
     case 'reservationDate':
