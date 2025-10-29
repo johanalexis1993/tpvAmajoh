@@ -1,6 +1,6 @@
 {
   "name": "amajoh-pos",
-  "version": "1.8.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
   "description": "Sistema completo de gestión de punto de venta (TPV) para restaurantes y pequeños negocios.",
