@@ -79,7 +79,20 @@
   │   │   │       ├───appendOrderElementsToDom.js
   │   │   │       └───createAndConfigureButtons.js
   │   │   ├───storage/
-  │   │   │   └───actualizar esta carpeta
+  │   │   │   ├───core/
+  │   │   │   │   ├───errors.ts
+  │   │   │   │   ├───events.ts
+  │   │   │   │   ├───handle.ts
+  │   │   │   │   ├───keys.ts
+  │   │   │   │   ├───ttl.ts
+  │   │   │   │   └───types.ts
+  │   │   │   ├───idb/
+  │   │   │   │   ├───openDB.ts
+  │   │   │   │   └───repo.ts
+  │   │   │   └───memory/
+  │   │   │   │   ├───adapters.ts
+  │   │   │   │   └───store.ts
+  │   │   │   └───indexedDB.ts
   │   │   └───app/
   │   │       ├───sseOrders.js
   │   │       ├───sidebar.js
