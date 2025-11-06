@@ -26,6 +26,6 @@
   "homepage": "https://github.com/johanalexis1993/tpvAmajoh#readme",
   "devDependencies": {
     "typescript": "^5.9.3",
-    "vite": "^7.1.10"
+    "vite": "^7.2.1"
   }
 }
