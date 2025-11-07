@@ -7,7 +7,7 @@ import {
   hydratePlates,
   hydrateTable
 } from '../logic/get/hydration.js'
-import { LS } from '../storage/indexedDB'
+import { batchSet } from '../storage/indexedDB'
 export const peticion = async (
   url,
   tablaId,
@@ -21,7 +21,7 @@ export const peticion = async (
       'default',
       'peticion→actualizarTabla'
     )) || {}
-  await LS.batchSet({
+  await batchSet({
     [`tableId:${tablaId}`]: tablaId,
     [`tableData:${tablaId}`]: res,
     [`tableColumns:${tablaId}`]: columnas
@@ -31,7 +31,7 @@ export const peticion = async (
 export const orders = async (url) => {
   const { paidOrders = [], openOrders = [] } =
     (await getRequest(url, 'default', 'orders')) || {}
-  await LS.batchSet({
+  await batchSet({
     'orders:open': openOrders,
     'orders:paid': paidOrders
   })
@@ -41,7 +41,7 @@ export const orders = async (url) => {
 export const getDishes = async (url) => {
   const { availablePlates = [], unavailablePlates = [] } =
     (await getRequest(url, 'no-store', 'getDishes')) || {}
-  await LS.batchSet({
+  await batchSet({
     'plates:available': availablePlates,
     'plates:unavailable': unavailablePlates
   })

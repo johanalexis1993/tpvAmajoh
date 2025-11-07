@@ -6,7 +6,7 @@ import {
   addPlateToDOM
 } from '../logic/post/updateUIAfterPost.js'
 import { triggerCheckAndPlaySound } from '../helpers/checkAndPlaySound.js'
-import { LS } from '../storage/indexedDB'
+import { set, del } from '../storage/indexedDB'
 export const postPetition = async (form, url) => {
   const formData = new FormData(form)
   const res = await postRequest(
@@ -44,7 +44,7 @@ export const postLogin = async (form) => {
     )
   }
   await postRequest('users/login', formData, form, 'default', 'postLogin')
-  await LS.set('nav:currentSectionId', 'inventario')
+  await set('nav:currentSectionId', 'inventario')
   window.location.href = '/pos.html'
 }
 export const postLogout = async () => {
@@ -67,6 +67,6 @@ export const postOrder = async (order, container) => {
   updateTableAmount('tablaInventario', res.products)
   paintOrderInDom(res)
   requestAnimationFrame(() => triggerCheckAndPlaySound())
-  await LS.del('order')
+  await del('order')
   container?.remove()
 }

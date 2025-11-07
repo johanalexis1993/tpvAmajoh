@@ -8,9 +8,10 @@ import '../../JavaScript/routesAndEvents/putHandlers.js'
 import '../../JavaScript/routesAndEvents/deleteAndPutHandlers.js'
 import '../../JavaScript/helpers/addIngredient.js'
 import '../../JavaScript/helpers/inputFile.js'
-import { LS } from '../../JavaScript/storage/indexedDB'
+import { get } from '../../JavaScript/storage/indexedDB'
 import { renderOrder } from '../../JavaScript/logic/post/renderOrder.js'
+//esta funcion no hace nada de perf¡cistencia
 requestIdleCallback(async () => {
-  const order = await LS.get('order')
+  const order = await get('order')
   if (order?.products?.length) renderOrder(order)
 })

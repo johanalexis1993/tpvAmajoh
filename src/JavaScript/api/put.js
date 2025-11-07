@@ -7,7 +7,7 @@ import {
 } from '../logic/put/updateUIAfterPut.js'
 import { updateAmount } from '../logic/post/updateUIAfterPost.js'
 import { triggerCheckAndPlaySound } from '../helpers/checkAndPlaySound.js'
-import { LS } from '../storage/indexedDB'
+import { get } from '../storage/indexedDB'
 export const editarElemento = async (url, id, tablaId, columnas) => {
   const formData = new FormData()
   const tabla = document.querySelector(`#${tablaId}`)
@@ -44,7 +44,7 @@ export const editarElemento = async (url, id, tablaId, columnas) => {
   }
 }
 export const putOrder = async (orderId, button) => {
-  const platosSeleccionados = (await LS.get('platosSeleccionados', null)) ?? {
+  const platosSeleccionados = (await get('platosSeleccionados', null)) ?? {
     products: []
   }
   const formData = new FormData()
@@ -88,7 +88,7 @@ export const updateOrderStatus = async (
   requestAnimationFrame(() => triggerCheckAndPlaySound())
 }
 export const toggleStockStatus = async () => {
-  const platosSeleccionados = (await LS.get('platosSeleccionados', null)) ?? {
+  const platosSeleccionados = (await get('platosSeleccionados', null)) ?? {
     products: []
   }
   const selectedProducts = platosSeleccionados.products

@@ -90,15 +90,3 @@ export const clearVersion = async (): Promise<void> => {
     tx.onerror = () => reject(tx.error as any)
   })
 }
-const LS = {
-  get,
-  getRaw,
-  set,
-  update,
-  batchSet,
-  del,
-  has,
-  clearNamespace,
-  clearVersion
-}
-export default LS

@@ -1,5 +1,5 @@
 import { showSection } from './showSection.js'
-import { LS } from '../storage/indexedDB'
+import { set } from '../storage/indexedDB'
 import '../helpers/watermark.js'
 const routes = {
   agregarPlato: 'agregarPlato',
@@ -21,7 +21,7 @@ const routes = {
 const setSection = (id, { updateHash = false } = {}) => {
   updateHash && location.hash !== `#${id}` && location.replace(`#${id}`)
   showSection(id)
-  LS.set('nav:currentSectionId', id)
+  set('nav:currentSectionId', id)
 }
 const handleHashChange = () => {
   const id = routes[location.hash.slice(1)] || 'inventario'

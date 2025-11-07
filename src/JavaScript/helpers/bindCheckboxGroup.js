@@ -1,5 +1,5 @@
 import { togglePlateButtons } from './togglePlateButtons.js'
-import { LS } from '../storage/indexedDB.js'
+import { get, set, del } from '../storage/indexedDB'
 const KEY = 'platosSeleccionados'
 const SELECTOR_CHECK = '.plato-checkbox'
 const addCheckboxesToPlates = (container) => {
@@ -16,7 +16,7 @@ const addCheckboxesToPlates = (container) => {
   })
 }
 const restoreSelectedPlates = async () => {
-  const data = (await LS.get(KEY, null)) ?? { products: [] }
+  const data = (await get(KEY, null)) ?? { products: [] }
   const idsMarcados = new Set(data.products.map((p) => String(p.id)))
   document.querySelectorAll(SELECTOR_CHECK).forEach((cb) => {
     const id = String(cb.dataset.id || '')
@@ -31,7 +31,7 @@ const handleCheckboxChange = async (e) => {
     !checkbox.classList.contains('plato-checkbox')
   )
     return
-  const state = (await LS.get(KEY, null)) ?? { products: [] }
+  const state = (await get(KEY, null)) ?? { products: [] }
   const id = String(checkbox.dataset.id || '')
   const title = String(checkbox.dataset.title || '')
   if (checkbox.checked) {
@@ -40,10 +40,10 @@ const handleCheckboxChange = async (e) => {
   } else {
     state.products = state.products.filter((p) => String(p.id) !== id)
   }
-  await LS.set(KEY, state)
+  await set(KEY, state)
 }
 const handleUpdateClick = async (btn, originalText) => {
-  await LS.del(KEY)
+  await del(KEY)
   document
     .querySelectorAll(SELECTOR_CHECK)
     .forEach((checkbox) => checkbox.remove())
